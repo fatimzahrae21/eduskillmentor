@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\indexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +12,5 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [indexController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
