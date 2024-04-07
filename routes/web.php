@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\indexController;
+use App\Http\Controllers\formatinController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,5 +13,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [indexController::class, 'index']);
 
+Route::get('/', [indexController::class, 'index']);
+Route::get('/Formation', [formatinController::class, 'index']);
