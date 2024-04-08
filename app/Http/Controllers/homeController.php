@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class formatinController extends Controller
+class homeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("NosFormation");
+        //
+        return view("index");
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\indexController;
-use App\Http\Controllers\formatinController;
+use App\Http\Controllers\homeController;
+use App\Http\Controllers\formationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [indexController::class, 'index']);
-Route::get('/Formation', [formatinController::class, 'index']);
+Route::get('/', [homeController::class, 'index']);
+Route::get('/Formation', [formationController::class, 'index']);
