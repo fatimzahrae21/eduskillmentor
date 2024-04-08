@@ -95,7 +95,7 @@
           <ul class="portfolio-flters">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-html">HTML</li>
-            <li data-filter=".filter-css">CSS</li>
+         
             <li data-filter=".filter-js">JavaScript</li>
             <li data-filter=".filter-php">PHP</li>
             <li data-filter=".filter-python">Python</li>
@@ -116,17 +116,7 @@
             </div>
           </div><!-- End Portfolio Item -->
   
-          <div class="col-xl-4 col-md-6 portfolio-item filter-css">
-            <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('imgfile/css.png')}}" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                
-                <h4>CSS</h4>
-                <p>CSS is a style sheet language used for describing the presentation of a document written in HTML.</p>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-  
+        
           <div class="col-xl-4 col-md-6 portfolio-item filter-js">
             <div class="portfolio-wrap">
                 <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('imgfile/js.png')}}" class="img-fluid" alt=""></a>
@@ -158,7 +148,7 @@
           </div><!-- End Portfolio Item -->
           <div class="col-xl-4 col-md-6 portfolio-item filter-poo">
             <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('imgfile/python.png')}}" class="img-fluid" alt=""></a>
+                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('imgfile/poo.jpg')}}" class="img-fluid" alt=""></a>
               <div class="portfolio-info">
                 <h4>Poo</h4>
                 <p>OOP is a programming paradigm based on the concept of "objects," which can contain data and code: data in the form of fields (often known as attributes or properties), and code in the form of procedures (often known as methods).</p>
