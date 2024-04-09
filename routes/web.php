@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 /*Route::get('/', [indexController::class, 'index']);*/
+/*add*/
 Route::get('/', [homeController::class, 'index']);
 Route::get('/Formation', [formationController::class, 'index']);
