@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Course;
 use App\Http\Requests\CoursRequest;
+use App\Models\Course;
+use Illuminate\Http\Request;
 
-class formationController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+       
         $courses = Course::all();
-        return view('courses.index', compact('courses'));
-    
+        return view('index', compact('courses'));
     }
+        //
+    
 
     /**
      * Show the form for creating a new resource.
@@ -33,14 +35,13 @@ class formationController extends Controller
     public function store(CoursRequest $request)
     {
         //
-        $formFields=$request->validated();
-        $formFields['image']=$request->file('image')->store('cours','public');
-        
-         Course::create($formFields);
- 
-         return redirect()->route('coutses.index')
-             ->with('success', 'Course created successfully.');
-    
+       $formFields=$request->validated();
+       $formFields['image']=$request->file('image')->store('cours','public');
+       
+        Course::create($formFields);
+
+        return redirect()->route('courses.index')
+            ->with('success', 'Course created successfully.');
     }
 
     /**
@@ -49,6 +50,7 @@ class formationController extends Controller
     public function show(Course $course)
     {
         //
+       
         return view('courses.show', compact('course'));
     }
 
@@ -58,6 +60,7 @@ class formationController extends Controller
     public function edit(Course $course)
     {
         //
+       
         return view('courses.edit', compact('course'));
     }
 
@@ -75,7 +78,6 @@ class formationController extends Controller
        
         return redirect()->route('courses.edit' ,$course->id)
             ->with('success', 'Course updated successfully.');
-   
     }
 
     /**
@@ -84,11 +86,10 @@ class formationController extends Controller
     public function destroy(Course $course)
     {
         //
-        
+       
         $course->delete();
 
         return redirect()->route('courses.index')
             ->with('success', 'Course deleted successfully.');
-   
     }
 }

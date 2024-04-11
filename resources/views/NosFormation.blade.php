@@ -102,16 +102,16 @@
             <li data-filter=".filter-poo">Object-Oriented Programming (OOP)</li>
           </ul><!-- End Portfolio Filters -->
         </div>
-  
+        @foreach ($courses as $course)
         <div class="row gy-4 portfolio-container">
   
           <div class="col-xl-4 col-md-6 portfolio-item filter-html">
             <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('imgfile/html.png')}}" class="img-fluid" alt=""></a>
+                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
               <div class="portfolio-info">
                
-                <h4>HTML</h4>
-                <p>HTML is the standard markup language for creating web pages and web applications.</p>
+                <h4>{{$course->title}}</h4>
+                <p>{{Str::limit($course->description,50,'')}}</p>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
@@ -119,42 +119,43 @@
         
           <div class="col-xl-4 col-md-6 portfolio-item filter-js">
             <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('imgfile/js.png')}}" class="img-fluid" alt=""></a>
+                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
               <div class="portfolio-info">
-                <h4>JavaScript</h4>
-                <p>JavaScript is a programming language that enables interactive web pages and is essential for web development.</p>
+                <h4>{{$course->title}}</h4>
+                <p>{{Str::limit($course->description,50,'')}}</p>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
   
           <div class="col-xl-4 col-md-6 portfolio-item filter-php">
             <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('imgfile/php.png')}}" class="img-fluid" alt=""></a>
+                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
               <div class="portfolio-info">
-                <h4>PHP</h4>
-                <p>PHP is a server-side scripting language used for web development and creating dynamic web pages.</p>
+                <h4>{{$course->title}}</h4>
+                <p>{{Str::limit($course->description,50,'')}}</p>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
   
           <div class="col-xl-4 col-md-6 portfolio-item filter-python">
             <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('imgfile/python.png')}}" class="img-fluid" alt=""></a>
+                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
               <div class="portfolio-info">
-                <h4>Python</h4>
-                <p>Python is a versatile and easy-to-learn programming language used for web development, data analysis, and more.</p>
+                <h4>{{$course->title}}</h4>
+                <p>{{Str::limit($course->description,50,'')}}</p>
               </div>
             </div>
           </div><!-- End Portfolio Item -->
           <div class="col-xl-4 col-md-6 portfolio-item filter-poo">
             <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('imgfile/poo.jpg')}}" class="img-fluid" alt=""></a>
+                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
               <div class="portfolio-info">
-                <h4>Poo</h4>
-                <p>OOP is a programming paradigm based on the concept of "objects," which can contain data and code: data in the form of fields (often known as attributes or properties), and code in the form of procedures (often known as methods).</p>
+                <h4>{{$course->title}}</h4>
+                <p>{{Str::limit($course->description,50,'')}}</p>
               </div>
             </div>
           </div>
+          @endforeach
         </div><!-- End Portfolio Container -->
   
       </div>
