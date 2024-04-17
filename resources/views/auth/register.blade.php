@@ -1,13 +1,33 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{asset('cssfile/csslogin.css')}}">
+    <link href="{{asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+   
+</head>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                
 
                 <div class="card-body">
+                    <div class="form-image">
+                        
+                        <a href="/login" class="logo d-flex align-items-center">
+                            <!-- Uncomment the line below if you also wish to use an image logo -->
+                            <!-- <img src="assets/img/logo.png" alt=""> -->
+                            <h1> <i class="bi bi-book"> </i> eduSkillmentor<span>.</span></h1>
+                          </a>
+                    </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -74,4 +94,10 @@
         </div>
     </div>
 </div>
-@endsection
+
+  <!-- Bootstrap JS and other scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Other scripts if needed -->

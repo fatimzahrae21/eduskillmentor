@@ -1,0 +1,33 @@
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   
+}
+
+.form-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    animation: slide-up 0.5s ease-in-out;
+}
+
+.form-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-image img {
+    max-width: 100px;
+    height: auto;
+}
+.form-image a{
+    text-decoration: none;
+}
