@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
- 
+
   <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
   <link href="{{asset('vendor/aos/aos.css')}}" rel="stylesheet">
@@ -59,14 +59,14 @@
       </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/">About</a></li>
-          <li><a href="/">Services</a></li>
+          <li><a href="/#hero">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#services">Services</a></li>
           <li><a href="/Formation">Our formation</a></li>
-          <li><a href="/">Team</a></li>
-          <li><a href="/">News</a></li>
+          <li><a href="/#team">Team</a></li>
+          <li><a href="/#recent-posts">News</a></li>
           
-          <li><a href="/">Contact</a></li>
+          <li><a href="/#contact">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -132,7 +132,7 @@
     </div>
     
 
-    
+    </div>
   </section>
   <!-- End Hero Section -->
 
@@ -312,8 +312,8 @@
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <img src="{{asset('imgfile/team3.jpeg')}}" class="img-fluid" alt="Fatima Zahra">
-              <h4>Fatima Zahra</h4>
-              <span>Mobile Developer</span>
+              <h4>Fatima Zahra jdidi</h4>
+              <span>full-stack Developer</span>
               <div class="social">
                 <a href="#"><i class="bi bi-twitter"></i></a>
                 <a href="#"><i class="bi bi-facebook"></i></a>
