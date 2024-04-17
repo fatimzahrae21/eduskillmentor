@@ -91,71 +91,31 @@
   
       <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
   
-        <div>
-          <ul class="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-html">HTML</li>
-         
-            <li data-filter=".filter-js">JavaScript</li>
-            <li data-filter=".filter-php">PHP</li>
-            <li data-filter=".filter-python">Python</li>
-            <li data-filter=".filter-poo">Object-Oriented Programming (OOP)</li>
-          </ul><!-- End Portfolio Filters -->
-        </div>
-        @foreach ($courses as $course)
+        <ul class="portfolio-flters">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-html">HTML</li>
+          <li data-filter=".filter-js">JavaScript</li>
+          <li data-filter=".filter-php">PHP</li>
+          <li data-filter=".filter-python">Python</li>
+          <li data-filter=".filter-poo">Object-Oriented Programming (OOP)</li>
+      </ul><!-- End Portfolio Filters -->
+       
         <div class="row gy-4 portfolio-container">
-  
+          @foreach ($courses as $course)
           <div class="col-xl-4 col-md-6 portfolio-item filter-html">
             <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
+                <a style="" href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid"   ></a>
               <div class="portfolio-info">
                
-                <h4>{{$course->title}}</h4>
-                <p>{{Str::limit($course->description,50,'')}}</p>
+                <h4>{{$course->title}} </h4>
+                <h6>{{$course->dureé}}</h6>
+                <p>{{$course->description}}</p>
+                <p>{{$course->prix}}</p>
+                
               </div>
             </div>
           </div><!-- End Portfolio Item -->
-  
-        
-          <div class="col-xl-4 col-md-6 portfolio-item filter-js">
-            <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4>{{$course->title}}</h4>
-                <p>{{Str::limit($course->description,50,'')}}</p>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-  
-          <div class="col-xl-4 col-md-6 portfolio-item filter-php">
-            <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4>{{$course->title}}</h4>
-                <p>{{Str::limit($course->description,50,'')}}</p>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-  
-          <div class="col-xl-4 col-md-6 portfolio-item filter-python">
-            <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4>{{$course->title}}</h4>
-                <p>{{Str::limit($course->description,50,'')}}</p>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
-          <div class="col-xl-4 col-md-6 portfolio-item filter-poo">
-            <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4>{{$course->title}}</h4>
-                <p>{{Str::limit($course->description,50,'')}}</p>
-              </div>
-            </div>
-          </div>
-          @endforeach
+           @endforeach
         </div><!-- End Portfolio Container -->
   
       </div>

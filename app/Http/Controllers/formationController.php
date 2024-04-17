@@ -14,7 +14,7 @@ class formationController extends Controller
     public function index()
     {
         $courses = Course::all();
-        return view('courses.index', compact('courses'));
+        return view('NosFormation', compact('courses'));
     
     }
 
@@ -32,14 +32,30 @@ class formationController extends Controller
      */
     public function store(CoursRequest $request)
     {
-        //
+        /*
         $formFields=$request->validated();
         $formFields['image']=$request->file('image')->store('cours','public');
         
          Course::create($formFields);
  
          return redirect()->route('coutses.index')
-             ->with('success', 'Course created successfully.');
+             ->with('success', 'Course created successfully.');*/
+             $validatedData = $request->validate([
+                'title' => 'required|string',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // adjust image validation rules as needed
+            ]);
+        
+            $course = new Course();
+            $course->title = $validatedData['title'];
+        
+            if ($request->hasFile('image')) {
+                $imagePath = $request->file('image')->store('courses', 'public');
+                $course->image = $imagePath;
+            }
+        
+            $course->save();
+        
+            return redirect()->route('courses.index')->with('success', 'Course created successfully.');
     
     }
 

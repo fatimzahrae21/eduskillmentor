@@ -1,4 +1,6 @@
 
+ 
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">eduSkillmentor</a>
@@ -17,14 +19,34 @@
          
           {{-- @endauth --}}
           {{-- ila kan user machi connecter --}}
-                
-            <a class="nav-link" href="{{route('courses.index')}}">tous les courses</a>
+            <li> <a class="nav-link" href="{{route('courses.index')}}">tous les courses</a></li>    
+           
           <li class="nav-item">
             <a  class="nav-link" href=""> nos formations</a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" href="{{route('courses.create')}}">Ajouter cours</a>
           </li>
+          <li class="nav-item">
+            <a  class="nav-link" href="{{route('teams.team')}}">teams</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }}
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </li>
               </ul>
                   </div>
     </div>
@@ -40,3 +62,5 @@
 {{-- affichher une sule fois --}}
 
 
+</body>
+</html>
