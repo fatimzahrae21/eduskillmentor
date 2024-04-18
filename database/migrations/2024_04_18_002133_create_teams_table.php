@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('nomComplete');
             $table->string('specialites');
-            $table->string('link facebook');
-            $table->string('link twitter');
-            $table->string('link linkdin');
-            $table->string('link instgram');
+            $table->string('linkfacebook');
+            $table->string('linktwitter');
+            $table->string('linklinkdin');
+            $table->string('linkinstgram');
             $table->timestamps();
         });
     }

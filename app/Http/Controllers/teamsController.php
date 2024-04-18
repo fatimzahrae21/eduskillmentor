@@ -30,9 +30,15 @@ class teamsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TeamRequest $request)
     {
-        //
+        // 
+        $formFields=$request->validated();
+        
+         Team::create($formFields);
+ 
+         return redirect()->route('teams.team')
+             ->with('success', 'team created successfully.');
     }
 
     /**
@@ -41,12 +47,7 @@ class teamsController extends Controller
     public function show(TeamRequest $request)
     {
         //
-        $formFields=$request->validated();
-        
-         Team::create($formFields);
- 
-         return redirect()->route('teams.team')
-             ->with('success', 'team created successfully.');
+       
   
     }
 

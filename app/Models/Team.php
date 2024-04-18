@@ -11,9 +11,9 @@ class Team extends Model
     protected $fillable = [
         'nomComplete',
         'specialites',
-        'link facebook',
-        'link twitter',
-        'link linkdin',
-        'link instgram'
+        'linkfacebook',
+        'linktwitter',
+        'linklinkdin',
+        'linkinstgram'
    ];
 }

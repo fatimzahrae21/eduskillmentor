@@ -56,6 +56,14 @@ Route::get('/admin/{course}/edit', [CourseController::class, 'edit'])
 Route::put('/admin/{course}', [CourseController::class, 'update'])
 ->name('courses.update');
 Route::get('/team', [teamsController::class, 'index'])->name('teams.team');
+Route::get('/team/create', [teamsController::class, 'create'])
+->name('teams.create');
+Route::post('/team/store', [teamsController::class, 'store'])
+->name('teams.store');
+Route::get('/team/{team}/edit', [teamsController::class, 'edit'])
+->name('teams.edit');
+Route::put('/team/{team}', [teamsController::class, 'update'])
+->name('teams.update');
 
 });
 Auth::routes();
