@@ -62,7 +62,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/">About</a></li>
           <li><a href="/">Services</a></li>
-          <li><a href="/Formation">Our formation</a></li>
+          <li><a href="/Formation">Our formations</a></li>
           <li><a href="/">Team</a></li>
           <li><a href="/">News</a></li>
           

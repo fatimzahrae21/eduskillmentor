@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\Auth;
 /*add*/
 Route::get('/', [indexController::class, 'index']);
 Route::get('/Formation', [formationController::class, 'index']);
+Route::get('/formationdetail',function(){
+    return view ('Formation-details');
+});
 // routes de page admin
 /*Route::get('/admin', [CourseController::class, 'index'])
 ->name('courses.index');
