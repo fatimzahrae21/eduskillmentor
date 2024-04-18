@@ -107,7 +107,7 @@
                 <a style="" href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid"   ></a>
               <div class="portfolio-info">
                
-                <h4>{{$course->title}} </h4>
+                <h4><a href="{{ route('Formation-details') }}">{{$course->title}} </a></h4>
                 <h6>{{$course->dureé}}</h6>
                 <p>{{$course->description}}</p>
                 <p>{{$course->prix}}</p>
