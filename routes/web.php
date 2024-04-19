@@ -5,6 +5,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\formationController;
 use App\Http\Controllers\teamsController;
+use App\Http\Controllers\FormateurController;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -20,8 +22,9 @@ use Illuminate\Support\Facades\Auth;
 */
 
 /*add*/
-Route::get('/', [indexController::class, 'index']);
+
 Route::get('/Formation', [formationController::class, 'index']);
+Route::get('/', [indexController::class, 'index']);
 // routes de page admin
 /*Route::get('/admin', [CourseController::class, 'index'])
 ->name('courses.index');
@@ -58,8 +61,10 @@ Route::put('/admin/{course}', [CourseController::class, 'update'])
 Route::get('/team', [teamsController::class, 'index'])->name('teams.team');
 Route::get('/team/create', [teamsController::class, 'create'])
 ->name('teams.create');
-Route::post('/team/store', [teamsController::class, 'store'])
-->name('teams.store');
+
+Route::post('/team', [FormateurController::class, 'store'])->name('formateurs.store');
+Route::delete('/team/{id}', [FormateurController::class, 'destroy'])->name('formateurs.destroy');
+Route::put('/team/{formateur}', [FormateurController::class, 'update'])->name('formateurs.update');
 Route::get('/team/{team}/edit', [teamsController::class, 'edit'])
 ->name('teams.edit');
 Route::put('/team/{team}', [teamsController::class, 'update'])

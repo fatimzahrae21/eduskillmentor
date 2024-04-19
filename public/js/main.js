@@ -317,26 +317,83 @@ $(document).ready(function() {
 
 // Get the modal
 var modal = document.getElementById("myModal");
-
+var modaledit = document.getElementById("myModaledit");
 // Get the button that opens the modal
 var btn = document.getElementById("openModalBtn");
-
+var btnedit = document.getElementById("Editbtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+var spanedit = document.getElementsByClassName("closeedit")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
 }
-
+btnedit.onclick = function() {
+  spanedit.style.display = "block";
+}
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
 
+spanedit.onclick = function() {
+  modaledit.style.display = "none";
+}
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modaledit.style.display = "none";
+  }
+}
+
+document.addEventListener("click", function() {
+  console.log('Document is ready');
+
+  // Function to handle editing formateurs
+  function editFormateurHandler() {
+      console.log('Edit button clicked');
+      
+      // Retrieve the formateur information from the table row
+      var row = this.parentNode.parentNode; // Get the parent row of the clicked button
+      var cells = row.getElementsByTagName('td'); // Get all cells in the row
+
+  // Extracting data from cells
+var id = cells[0].textContent.trim();
+var nomComplete = cells[1].textContent.trim();
+var specialites = cells[2].textContent.trim();
+var linkFacebook = cells[3].textContent.trim();
+var linkTwitter = cells[4].textContent.trim();
+var linkLinkedin = cells[5].textContent.trim();
+var linkInstagram = cells[6].textContent.trim();
+
+
+      // Populate the modal form with the extracted data
+      document.getElementById('formateurId').value = id;
+      document.getElementById('nomCompletef').value = nomComplete; // Display specialités in the Nom Complet input
+      document.getElementById('specialitesInput').value = specialites;
+      document.getElementById('facebook').value = linkFacebook;
+      document.getElementById('twitter').value = linkTwitter;
+      document.getElementById('instagram').value = linkInstagram;
+      document.getElementById('linkedin').value = linkLinkedin;
+
+      // Update the form action URL
+      /*var form = document.getElementById('editForm');
+      form.action = "{{ route('formateurs.update', '" + id + "') }}";*/
+
+
+      // Show the edit modal
+      document.getElementById('myModaledit').style.display = 'block';
+  }
+
+  // Attach editFormateurHandler to all edit buttons
+  var editButtons = document.querySelectorAll('#Editbtn');
+  editButtons.forEach(function(btn) {
+      btn.addEventListener('click', editFormateurHandler);
+  });
+});

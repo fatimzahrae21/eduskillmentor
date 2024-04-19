@@ -12,7 +12,7 @@
     </x-alert>
     @endif
 
-    <form action="{{ route('courses.update', $course->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('courses.update',$course->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3">

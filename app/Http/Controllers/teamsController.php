@@ -32,14 +32,10 @@ class teamsController extends Controller
      */
     public function store(TeamRequest $request)
     {
-        // 
-        $formFields=$request->validated();
         
-         Team::create($formFields);
- 
-         return redirect()->route('teams.team')
-             ->with('success', 'team created successfully.');
-    }
+        dd($request->all());
+}
+    
 
     /**
      * Display the specified resource.
