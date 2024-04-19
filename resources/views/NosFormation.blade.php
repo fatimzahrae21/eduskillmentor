@@ -62,7 +62,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/">About</a></li>
           <li><a href="/">Services</a></li>
-          <li><a href="/Formation">Our formation</a></li>
+          <li><a href="/Formation">Our formations</a></li>
           <li><a href="/">Team</a></li>
           <li><a href="/">News</a></li>
           
@@ -107,7 +107,7 @@
                 <a style="" href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid"   ></a>
               <div class="portfolio-info">
                
-                <h4>{{$course->title}} </h4>
+                <h4><a href="{{ route('Formation-details') }}">{{$course->title}} </a></h4>
                 <h6>{{$course->dureé}}</h6>
                 <p>{{$course->description}}</p>
                 <p>{{$course->prix}}</p>
