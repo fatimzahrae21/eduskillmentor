@@ -25,11 +25,8 @@ use Illuminate\Support\Facades\Auth;
 /*add*/
 
 Route::get('/Formation', [formationController::class, 'index']);
-<<<<<<< HEAD
 Route::get('/', [indexController::class, 'index']);
-=======
 Route::get('/formationdetail',[detailFormationController::class, 'index'])->name('Formation-details');
->>>>>>> e0348222b2caacb16cd4f74c73cfc769b3026936
 // routes de page admin
 /*Route::get('/admin', [CourseController::class, 'index'])
 ->name('courses.index');

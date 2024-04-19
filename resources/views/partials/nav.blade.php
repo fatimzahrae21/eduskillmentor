@@ -21,9 +21,7 @@
           {{-- ila kan user machi connecter --}}
             <li> <a class="nav-link" href="{{route('courses.index')}}">tous les courses</a></li>    
            
-          <li class="nav-item">
-            <a  class="nav-link" href=""> nos formations</a>
-          </li>
+         
           <li class="nav-item">
             <a  class="nav-link" href="{{route('courses.create')}}">Ajouter cours</a>
           </li>
