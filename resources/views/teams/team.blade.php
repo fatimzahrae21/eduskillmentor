@@ -15,6 +15,7 @@
 			<th>ID</th>
 			<th>nom</th>
 			<th>specialites</th>
+			<th>image</th>
 			<th>link facebook</th>
 			<th>link twitter</th>
 			<th>link linkdin</th>
@@ -28,8 +29,9 @@
 		<tr>
 			
 			<td>{{$team->id}}</td>
-			<td><img src="{{asset('images/'.$team->image)}}" class="img-fluid" width="20px"  >{{$team->nomComplete}}</td>
+			<td>{{$team->nomComplete}}</td>
 			<td>{{$team->specialites}}</td>
+			<td><img src="{{asset('images/'.$team->image)}}" class="img-fluid" width="30px"  ></td>
 			<td>{{$team->linkfacebook}}</td>
 			<td>{{$team->linktwitter}}</td>
 			<td>{{$team->linklinkdin}}</td>
@@ -38,12 +40,12 @@
 				<button type="button" id="Editbtn" class="btn btn-warning" ><i class="bi bi-pencil"></i>
 				</button>
 				
-					
-				<form action="{{ route('formateurs.destroy', $team->id ) }}" method="POST">
+					<button style="display: none">
+				<form  action="{{ route('formateurs.destroy', $team->id ) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                </form>	
+                </form>	</button>
 						
 					
 				
