@@ -34,8 +34,8 @@
 			<td><img src="{{asset('images/'.$team->image)}}" class="img-fluid" width="30px"  ></td>
 			<td>{{$team->linkfacebook}}</td>
 			<td>{{$team->linktwitter}}</td>
-			<td>{{$team->linklinkdin}}</td>
-			<td>{{$team->linkinstgram}}</td>
+			<td>{{$team->linklinkedin}}</td>
+			<td>{{$team->linkinstagram}}</td>
 			<td>
 				<button type="button" id="Editbtn" class="btn btn-warning" ><i class="bi bi-pencil"></i>
 				</button>

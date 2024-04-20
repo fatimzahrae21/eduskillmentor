@@ -187,7 +187,7 @@
                 <li><strong>le prix de la formation</strong> <span>{{$course->prix}}</span></li>
                 <li><strong>la date de publication</strong> <span>01 March, 2024</span></li>
                 <li><strong>a video for more details about this course</strong> <a href="#">www.example.com</a></li>
-                <li><a href="#" class="btn-visit align-self-start">learn course</a></li>
+                <li><a href="{{route('learn_more')}}" class="btn-visit align-self-start">learn course</a></li>
               </ul>
             </div>
           </div>

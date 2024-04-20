@@ -321,6 +321,19 @@
                 <a href="#"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
+          </div>
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="{{asset('imgfile/team1.jpg')}}" class="img-fluid" alt="Fatima Zahra">
+              <h4>oumni housna</h4>
+              <span>formateur at OFPPT</span>
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
           </div><!-- End Team Member -->
     
         </div>
@@ -441,7 +454,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="blog-details.html">Laravel: Building Web Applications</a>
+                <a href="{{ route('Formation-details') }}">Laravel: Building Web Applications</a>
               </h2>
         
               <div class="d-flex align-items-center">
@@ -467,7 +480,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="blog-details.html">Mastering Laravel: Advanced Techniques</a>
+                <a href="{{ route('Formation-details') }}">Mastering Laravel: Advanced Techniques</a>
               </h2>
         
               <div class="d-flex align-items-center">
@@ -493,7 +506,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="blog-details.html">Laravel Eloquent: Understanding ORM</a>
+                <a href="{{ route('Formation-details') }}">Laravel Eloquent: Understanding ORM</a>
               </h2>
         
               <div class="d-flex align-items-center">

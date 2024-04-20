@@ -12,12 +12,12 @@
 		<div class="form-group">
                <input type="hidden" id="formateurId" value="">
 			<label for="nom">Nom Complete</label>
-			<input type="text" class="form-control" id="nomCompletef"  placeholder="Nom Complet" name="nomComplete">
+			<input type="text" class="form-control" id="nomComplete"  placeholder="Nom Complet" name="nomComplete">
 		
 		</div>
 		<div class="form-group">
 			<label for="specialites">Spécialités</label>
-			<input type="text" class="form-control" id="specialitesInput" value="" placeholder="Spécialités" name="specialites">
+			<input type="text" class="form-control" id="specialites" value="" placeholder="Spécialités" name="specialites">
 		</div>
 		<div class="form-group">
 			<label for="image">Image</label>
@@ -41,7 +41,7 @@
 			<label for="linkedin"><i class="bi bi-linkedin"></i> Lien LinkedIn</label>
 			<input type="text" class="form-control" id="linkedin" name="linklinkedin">
 		</div>
-		<button type="submit" class="btn btn-primary">Ajouter</button>
+		<button type="submit" class="btn btn-primary">Modifier</button>
 	</form>
 	
 	</div>

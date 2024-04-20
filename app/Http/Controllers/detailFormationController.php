@@ -20,6 +20,13 @@ class detailFormationController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    public function learn_more() {
+        return view('learn_more');
+    }
+    public function singin() {
+        return view('singin');
+    }
+    
     public function create()
     {
         //
