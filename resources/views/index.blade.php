@@ -37,7 +37,7 @@
   <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@eduSkillmentor.com">contact@eduSkillmentor.com</a></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@eduSkillmentor.com">eduSkillmentor@contact.com</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>+212 785962314</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
@@ -83,7 +83,7 @@
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
           <h2>Welcome to <span>eduSkillmentor</span></h2>
-          <p>eduSkillmentor for education programing laungage </p>
+          <p>eduSkillmentor for education programming laungage </p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started">Get Started</a>
             
@@ -351,16 +351,66 @@
             <h3 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
                 <span class="num">1.</span>
-                How can I improve my problem-solving skills?
+                Is this course free or paid?
               </button>
             </h3>
             <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
               <div class="accordion-body">
-                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                It depends on the specific course. Some courses are completely free, while others require payment for registration or access to the full content. </div>
+            </div>
+          </div><!-- # Faq item-->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                <span class="num">2.</span>
+                What types of courses and formations are available?
+              </button>
+            </h3>
+            <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+              <div class="accordion-body">
+                There is a wide range of courses and formations available, including online courses, in-person workshops, vocational training programs, university degrees, and professional certifications.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                <span class="num">3.</span>
+                What programming languages can I learn through these courses?
+              </button>
+            </h3>
+            <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+              <div class="accordion-body">
+                You can find courses for almost any programming language, including popular ones like Python, JavaScript, Java, C++, and Ruby, as well as specialized languages like R, Swift, and Go.
               </div>
             </div>
           </div><!-- # Faq item-->
 
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
+                <span class="num">4.</span>
+                How do I choose the right programming course for me?
+              </button>
+            </h3>
+            <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+              <div class="accordion-body">
+                Consider your learning style, goals, and level of experience. Look for courses that match your skill level, offer the topics you're interested in, and have good reviews or ratings from past students.</div>
+            </div>
+          </div><!-- # Faq item-->
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
+                <span class="num">5.</span>
+                Are online programming courses effective?
+              </button>
+            </h3>
+            <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+              <div class="accordion-body">
+                Yes, many people find online courses to be effective for learning programming. They offer flexibility, accessibility, and often include interactive exercises and projects to reinforce learning.
+              </div>
+            </div>
+          </div>
           <!-- Other FAQ items remain unchanged -->
 
         </div>

@@ -66,8 +66,8 @@ Route::get('/team/create', [teamsController::class, 'create'])
 
 Route::post('/team', [FormateurController::class, 'store'])->name('formateurs.store');
 Route::delete('/team/{id}', [FormateurController::class, 'destroy'])->name('formateurs.destroy');
-Route::put('/team/{formateur}', [FormateurController::class, 'update'])->name('formateurs.update');
-Route::get('/team/{team}/edit', [teamsController::class, 'edit'])
+Route::put('/team/{id}', [FormateurController::class, 'update'])->name('formateurs.update');
+Route::get('/team/{id}/edit', [teamsController::class, 'edit'])
 ->name('teams.edit');
 Route::put('/team/{team}', [teamsController::class, 'update'])
 ->name('teams.update');

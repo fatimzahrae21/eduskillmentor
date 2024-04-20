@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class detailFormationController extends Controller
@@ -12,7 +13,8 @@ class detailFormationController extends Controller
     public function index()
     {
         // 
-        return view ('Formation-details');
+        $courses = Course::all(); 
+        return view ('Formation-details',compact('courses'));
     }
 
     /**

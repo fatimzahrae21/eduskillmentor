@@ -160,7 +160,7 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <div>
-                  <img src="{{asset('imgfile/1713484313.jpg')}}" class="testimonial-img" alt="">
+                  <img src="{{asset('images/1713484313.jpg')}}" class="testimonial-img" alt="">
                   <h3>Fatima ezzahrae jdidi</h3>
                   <h4>full-stack developper</h4>
                 </div>
