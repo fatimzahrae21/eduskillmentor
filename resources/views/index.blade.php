@@ -83,7 +83,7 @@
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
           <h2>Welcome to <span>eduSkillmentor</span></h2>
-          <p>eduSkillmentor for education programming laungage </p>
+          <p>eduSkillmentor for education programming laungage online </p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started">Get Started</a>
             
@@ -546,7 +546,7 @@
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>27 ISTA NTIC SAFI ,  MOROCCO</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -554,7 +554,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h4>Email:</h4>
-                  <p>info@example.com</p>
+                  <p>eduSkillmentor@contact.com/p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -630,10 +630,13 @@
       <div class="col-lg-2 col-6 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About </a></li>
-          <li><a href="#">Our formation</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="/#hero">Home</a></li>
+          <li><a href="/#about">About </a></li>
+          <li><a href="/#services">Services </a></li>
+          <li><a href="/Formation">Our formation</a></li>
+          <li><a href="/#team">Team</a></li>
+          <li><a href="/#recent-posts">News</a></li>
+          <li><a href="/#contact">Contact</a></li>
         </ul>
       </div>
 
@@ -642,11 +645,11 @@
       <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
         <h4>Contact Us</h4>
         <p>
-          123 Example Street <br>
-          City, State 12345 <br>
-          Country <br><br>
+         ISTA NTIC SAFI <br>
+          City, SAFI<br>
+          Country MOROCCO <br><br>
           <strong>Phone:</strong> +1 234 5678 910<br>
-          <strong>Email:</strong> con@example.com<br>
+          <strong>Email:</strong> eduSkillmentor@contact.com<br>
         </p>
 
       </div>
@@ -667,15 +670,7 @@
 
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files 
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>-->
-  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/aos/aos.js') }}"></script>
 <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
 <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
@@ -684,7 +679,7 @@
 <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
 
 
-  <!-- Template Main JS File -->
+ 
   <script src="{{ asset('js/main.js') }}"></script>
 
 </body>

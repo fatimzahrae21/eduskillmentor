@@ -92,8 +92,7 @@
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
               <h2>Formations Details</h2>
-              <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-            </div>
+              <p>For more details about our courses and the price and also learning more about it</div>
           </div>
         </div>
       </div>
@@ -184,7 +183,7 @@
               <h3>Project information</h3>
               <ul>
                 <li><strong>la dureé de formation</strong> <span>{{$course->dureé}}</span></li>
-                <li><strong>le prix de la formation</strong> <span>{{$course->prix}}</span></li>
+                <li><strong>le prix de la formation</strong> <span>{{$course->prix}}DH</span></li>
                 <li><strong>la date de publication</strong> <span>01 March, 2024</span></li>
                 <li><strong>a video for more details about this course</strong> <a href="#">www.example.com</a></li>
                 <li><a href="{{route('learn_more')}}" class="btn-visit align-self-start">learn course</a></li>
@@ -221,15 +220,17 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="/#hero">Home</a></li>
+          <li><a href="/#about">About </a></li>
+          <li><a href="/#services">Services </a></li>
+          <li><a href="/Formation">Our formation</a></li>
+          <li><a href="/#team">Team</a></li>
+          <li><a href="/#recent-posts">News</a></li>
+          <li><a href="/#contact">Contact</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
+        {{-- <div class="col-lg-2 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
             <li><a href="#">Web Design</a></li>
@@ -238,16 +239,16 @@
             <li><a href="#">Marketing</a></li>
             <li><a href="#">Graphic Design</a></li>
           </ul>
-        </div>
+        </div> --}}
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
+            ISTA NTIC SAFI <br>
+          City, SAFI<br>
+          Country MOROCCO <br><br>
+          <strong>Phone:</strong> +1 234 5678 910<br>
+          <strong>Email:</strong> eduSkillmentor@contact.com<br>
           </p>
 
         </div>
@@ -257,15 +258,9 @@
 
     <div class="container mt-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Impact</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>eduSkillmentor</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+    
     </div>
 
   </footer><!-- End Footer -->
@@ -275,15 +270,7 @@
 
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  {{-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script> --}}
-
+  
   <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('vendor/aos/aos.js') }}"></script>
   <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
@@ -292,7 +279,6 @@
   <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
   <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
   
-  <!-- Template Main JS File -->
   <script src="{{ asset('js/main.js') }}"></script>
 
 </body>

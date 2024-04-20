@@ -26,6 +26,9 @@ class detailFormationController extends Controller
     public function singin() {
         return view('singin');
     }
+    public function singup() {
+        return view('singup');
+    }
     
     public function create()
     {

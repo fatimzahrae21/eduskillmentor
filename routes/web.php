@@ -88,3 +88,5 @@ Route::get('/formationdetail/learn_more', [detailFormationController::class, 'le
 ->name('learn_more');
 Route::get('/formationdetail/learn_more/singin', [detailFormationController::class, 'singin'])
 ->name('singin');
+Route::get('/formationdetail/learn_more/singup', [detailFormationController::class, 'singup'])
+->name('singup');
