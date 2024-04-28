@@ -27,17 +27,17 @@
 	@foreach ($teams as $team)
 	<tbody>
 		<tr>
-			
 			<td>{{$team->id}}</td>
-			<td>{{$team->nomComplete}}</td>
-			<td>{{$team->specialites}}</td>
-			<td><img src="{{asset('images/'.$team->image)}}" class="img-fluid" width="30px"  ></td>
-			<td>{{$team->linkfacebook}}</td>
-			<td>{{$team->linktwitter}}</td>
-			<td>{{$team->linklinkdin}}</td>
-			<td>{{$team->linkinstgram}}</td>
+            <td>{{$team->nomComplete}}</td>
+            <td>{{$team->specialites}}</td>
+            <td><img src="{{asset('images/'.$team->image)}}" class="img-fluid" width="30px"  ></td>
+            <td>{{$team->linkfacebook}}</td>
+            <td>{{$team->linktwitter}}</td>
+         
+            <td>{{$team->linklinkedin}}</td>
+			<td>{{$team->linkinstagram}}</td>
 			<td>
-				<button type="button" id="Editbtn" class="btn btn-warning" ><i class="bi bi-pencil"></i>
+				<button type="button" id="Editbtn" data-id="{{$team->id}}" class="btn btn-warning" ><i class="bi bi-pencil"></i>
 				</button>
 				
 					<button style="display: none">
@@ -67,11 +67,11 @@
 		@csrf
 		<div class="form-group">
 			<label for="nom">Nom Complete</label>
-			<input type="text" class="form-control" id="nom" placeholder="Nom Complet" name="nomComplete">
+			<input type="text" class="form-control" placeholder="Nom Complet" name="nomComplete">
 		</div>
 		<div class="form-group">
 			<label for="specialites">Spécialités</label>
-			<input type="text" class="form-control" id="specialites" placeholder="Spécialités" name="specialites">
+			<input type="text" class="form-control"  placeholder="Spécialités" name="specialites">
 		</div>
 		<div class="form-group">
 			<label for="image">Image</label>
@@ -80,20 +80,20 @@
 		<div class="form-row">
 			<div class="form-group col-md-4">
 				<label for="facebook"><i class="bi bi-facebook"></i> Lien Facebook</label>
-				<input type="text" class="form-control" id="facebook" name="linkfacebook">
+				<input type="text" class="form-control"  name="linkfacebook">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="twitter"><i class="bi bi-twitter"></i> Lien Twitter</label>
-				<input type="text" class="form-control" id="twitter" name="linktwitter">
+				<input type="text" class="form-control"  name="linktwitter">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="instagram"><i class="bi bi-instagram"></i> Lien Instagram</label>
-				<input type="text" class="form-control" id="instagram" name="linkinstagram">
+				<input type="text" class="form-control"  name="linkinstagram">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="linkedin"><i class="bi bi-linkedin"></i> Lien LinkedIn</label>
-			<input type="text" class="form-control" id="linkedin" name="linklinkedin">
+			<input type="text" class="form-control" name="linklinkedin">
 		</div>
 		<button type="submit" class="btn btn-primary">Ajouter</button>
 	</form>

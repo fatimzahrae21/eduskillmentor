@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Team;
 
 class indexController extends Controller
 {
@@ -11,7 +12,9 @@ class indexController extends Controller
      */
     public function index()
     {
-        return view("index");
+        $teams = Team::all();
+     
+        return view("index", compact('teams'));
     }
 
     /**

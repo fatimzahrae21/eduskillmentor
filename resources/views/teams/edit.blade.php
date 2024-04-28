@@ -5,11 +5,12 @@
 	  <span class="closeedit" >&times;</span>
 	  
 	 
-		<form action="{{ route('formateurs.update', '') }}/" method="POST" id="editForm" enctype="multipart/form-data">
+		<form  method="POST" action="{{ route('formateurs.update','') }}"  id="editForm" enctype="multipart/form-data">
 
       @csrf
       @method('PUT')
 		<div class="form-group">
+			<input type="hidden" name="id" id="edit-id">
                <input type="hidden" id="formateurId" value="">
 			<label for="nom">Nom Complete</label>
 			<input type="text" class="form-control" id="nomCompletef"  placeholder="Nom Complet" name="nomComplete">
@@ -32,14 +33,17 @@
 				<label for="twitter"><i class="bi bi-twitter"></i> Lien Twitter</label>
 				<input type="text" class="form-control" id="twitter" name="linktwitter">
 			</div>
+			
 			<div class="form-group col-md-4">
-				<label for="instagram"><i class="bi bi-instagram"></i> Lien Instagram</label>
-				<input type="text" class="form-control" id="instagram" name="linkinstagram">
+				<label for="linkedin"><i class="bi bi-linkedin"></i> Lien LinkedIn</label>
+			<input type="text" class="form-control" id="linkedin" name="linklinkedin">
+
+			
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="linkedin"><i class="bi bi-linkedin"></i> Lien LinkedIn</label>
-			<input type="text" class="form-control" id="linkedin" name="linklinkedin">
+			<label for="instagram"><i class="bi bi-instagram"></i> Lien Instagram</label>
+				<input type="text" class="form-control" id="instagram" name="linkinstagram">
 		</div>
 		<button type="submit" class="btn btn-primary">Ajouter</button>
 	</form>

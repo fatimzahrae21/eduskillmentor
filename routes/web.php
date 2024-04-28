@@ -25,11 +25,10 @@ use Illuminate\Support\Facades\Auth;
 /*add*/
 
 Route::get('/Formation', [formationController::class, 'index']);
-<<<<<<< HEAD
+
 Route::get('/', [indexController::class, 'index']);
-=======
+
 Route::get('/formationdetail',[detailFormationController::class, 'index'])->name('Formation-details');
->>>>>>> e0348222b2caacb16cd4f74c73cfc769b3026936
 // routes de page admin
 /*Route::get('/admin', [CourseController::class, 'index'])
 ->name('courses.index');
@@ -69,7 +68,7 @@ Route::get('/team/create', [teamsController::class, 'create'])
 
 Route::post('/team', [FormateurController::class, 'store'])->name('formateurs.store');
 Route::delete('/team/{id}', [FormateurController::class, 'destroy'])->name('formateurs.destroy');
-Route::put('/team/{formateur}', [FormateurController::class, 'update'])->name('formateurs.update');
+Route::put('/team/{id}', [FormateurController::class, 'update'])->name('formateurs.update');
 Route::get('/team/{team}/edit', [teamsController::class, 'edit'])
 ->name('teams.edit');
 Route::put('/team/{team}', [teamsController::class, 'update'])

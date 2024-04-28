@@ -362,15 +362,15 @@ document.addEventListener("click", function() {
       // Retrieve the formateur information from the table row
       var row = this.parentNode.parentNode; // Get the parent row of the clicked button
       var cells = row.getElementsByTagName('td'); // Get all cells in the row
-
+      var teamId = this.getAttribute('data-id');
   // Extracting data from cells
 var id = cells[0].textContent.trim();
 var nomComplete = cells[1].textContent.trim();
 var specialites = cells[2].textContent.trim();
-var linkFacebook = cells[3].textContent.trim();
-var linkTwitter = cells[4].textContent.trim();
-var linkLinkedin = cells[5].textContent.trim();
-var linkInstagram = cells[6].textContent.trim();
+var linkFacebook = cells[4].textContent.trim();
+var linkTwitter = cells[5].textContent.trim();
+var linkLinkedin = cells[6].textContent.trim();
+var linkInstagram = cells[7].textContent.trim();
 
 
       // Populate the modal form with the extracted data
@@ -385,7 +385,7 @@ var linkInstagram = cells[6].textContent.trim();
       // Update the form action URL
       /*var form = document.getElementById('editForm');
       form.action = "{{ route('formateurs.update', '" + id + "') }}";*/
-
+      document.getElementById('edit-id').value = teamId;
 
       // Show the edit modal
       document.getElementById('myModaledit').style.display = 'block';

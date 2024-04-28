@@ -280,48 +280,26 @@
         </div>
     
         <div class="row gy-4">
+          @foreach ($teams as $team)
     
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+
+
             <div class="member">
-              <img src="{{asset('imgfile/team3.jpeg')}}" class="img-fluid" alt="Souad El Maazouzi">
-              <h4>Souad El Maazouzi</h4>
-              <span>Database Administrator</span>
+              <img img src="{{asset('images/'.$team->image)}}" class="img-fluid" alt="Souad El Maazouzi">
+              <h4>{{$team->nomComplete}}</h4>
+              <span>{{$team->specialites}}r</span>
               <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="{{$team->linktwitter}}"><i class="bi bi-twitter"></i></a>
+                <a href="{{$team->linkfacebook}}"><i class="bi bi-facebook"></i></a>
+                <a href="{{$team->linkinstgram}}"><i class="bi bi-instagram"></i></a>
+                <a href="{{$team->linklinkdin}}"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div><!-- End Team Member -->
     
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <img src="{{asset('imgfile/team1.jpg')}}" class="img-fluid" alt="Karima Bouy">
-              <h4>Karima Bouy</h4>
-              <span>Full Stack Developer</span>
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-    
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <img src="{{asset('imgfile/team3.jpeg')}}" class="img-fluid" alt="Fatima Zahra">
-              <h4>Fatima Zahra jdidi</h4>
-              <span>full-stack Developer</span>
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+          @endforeach
+         
     
         </div>
     

@@ -12,7 +12,7 @@ class FormateurController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
     /**
