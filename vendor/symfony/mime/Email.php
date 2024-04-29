@@ -542,7 +542,7 @@ class Email extends Message
         if (!$header = $this->getHeaders()->get($name)) {
             return $this->setListAddressHeaderBody($name, $addresses);
         }
-        $header->addAddresses(Address::createArray($addresses));
+        // $header->addAddresses(Address::createArray($addresses));
 
         return $this;
     }
@@ -555,7 +555,7 @@ class Email extends Message
         $addresses = Address::createArray($addresses);
         $headers = $this->getHeaders();
         if ($header = $headers->get($name)) {
-            $header->setAddresses($addresses);
+            // $header->setAddresses($addresses);
         } else {
             $headers->addMailboxListHeader($name, $addresses);
         }
