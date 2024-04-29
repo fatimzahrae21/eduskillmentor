@@ -139,18 +139,14 @@
         </div>
  
         <div class="row justify-content-between gy-4 mt-4">
-          @foreach ($courses as $course)
+        
           <div class="col-lg-8">
 
            
             <div class="portfolio-description">
-              <h2>formation {{$course->title}} Details</h2>
-              <p>
+              <h2>formation {{ $detailFormation->course->title}}  Details</h2>
               
-              </p>
-              <p>
-                {{$course->description}}
-              </p>
+           
 
               <div class="testimonial-item">
                 <p>
@@ -159,33 +155,31 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <div>
-                  <img src="{{asset('images/1713484313.jpg')}}" class="testimonial-img" alt="">
-                  <h3>Fatima ezzahrae jdidi</h3>
-                  <h4>full-stack developper</h4>
+                 
+                  <img src="{{asset('images/'.$detailFormation->team->image)}}" class="testimonial-img" alt="">
+                  <h3> {{ $detailFormation->team->nomComplete}}</h3>
+                  <h4>{{ $detailFormation->team->specialites}}</h4>
                 </div>
               </div>
 
               <p>
-                Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
-
-              <p>
-                Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
+                {{ $detailFormation->course->description}}
               </p>
 
             </div> 
            
           
-            @endforeach</div>
+           </div>
          
 
           <div class="col-lg-3">
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>la dureé de formation</strong> <span>{{$course->dureé}}</span></li>
-                <li><strong>le prix de la formation</strong> <span>{{$course->prix}}DH</span></li>
-                <li><strong>la date de publication</strong> <span>01 March, 2024</span></li>
-                <li><strong>a video for more details about this course</strong> <a href="#">www.example.com</a></li>
+                <li><strong>la dureé de formation</strong> <span>{{ $detailFormation->course->dureé }}</span></li>
+                <li><strong>le prix de la formation</strong> <span>{{ $detailFormation->course->prix }}DH</span></li>
+                <li><strong>la date de publication</strong> <span>{{ $detailFormation->date_publication }}</span></li>
+                <li><strong>a video for more details about this course</strong> <a href="#{{ $detailFormation->video_link}}">View</a></li>
                 <li><a href="{{route('learn_more')}}" class="btn-visit align-self-start">learn course</a></li>
               </ul>
             </div>
@@ -198,73 +192,63 @@
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
+ <!-- ======= Footer ======= -->
+ <footer id="footer" class="footer">
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span>Impact</span>
-          </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-info">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span>eduSkillmentor</span>
+        </a>
+        <p>Welcome to eduSkillmentor! We offer comprehensive training and educational services to help you achieve your learning goals. Our mission is to empower individuals through knowledge and skill development.</p>
+        <div class="social-links d-flex mt-4">
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
+      </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="/#hero">Home</a></li>
-          <li><a href="/#about">About </a></li>
-          <li><a href="/#services">Services </a></li>
-          <li><a href="/Formation">Our formation</a></li>
-          <li><a href="/#team">Team</a></li>
-          <li><a href="/#recent-posts">News</a></li>
-          <li><a href="/#contact">Contact</a></li>
-          </ul>
-        </div>
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="/#hero">Home</a></li>
+        <li><a href="/#about">About </a></li>
+        <li><a href="/#services">Services </a></li>
+        <li><a href="/Formation">Our formation</a></li>
+        <li><a href="/#team">Team</a></li>
+        <li><a href="/#recent-posts">News</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
 
-        {{-- <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div> --}}
+      
 
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>
-            ISTA NTIC SAFI <br>
-          City, SAFI<br>
-          Country MOROCCO <br><br>
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <h4>Contact Us</h4>
+        <p>
+          ISTA NTIC SAFI <br>
+        City, SAFI<br>
+        Country MOROCCO <br><br>
           <strong>Phone:</strong> +1 234 5678 910<br>
           <strong>Email:</strong> eduSkillmentor@contact.com<br>
-          </p>
-
-        </div>
+        </p>
 
       </div>
-    </div>
 
-    <div class="container mt-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>eduSkillmentor</span></strong>. All Rights Reserved
-      </div>
-    
     </div>
+  </div>
 
-  </footer><!-- End Footer -->
-  <!-- End Footer -->
+  <div class="container mt-4">
+    <div class="copyright">
+      &copy; Copyright <strong><span>eduSkillmentor</span></strong>. All Rights Reserved
+    </div>
+  
+  </div>
+
+</footer><!-- End Footer -->
+
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
