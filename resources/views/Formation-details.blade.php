@@ -92,8 +92,7 @@
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
               <h2>Formations Details</h2>
-              <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-            </div>
+              <p>For more details about our courses and the price and also learning more about it</div>
           </div>
         </div>
       </div>
@@ -115,7 +114,7 @@
           <div class="slides-1 portfolio-details-slider swiper">
             <div class="swiper-wrapper align-items-center">
 
-              <div class="swiper-slide">
+              {{-- <div class="swiper-slide">
                 <img src="assets/img/portfolio/app-1.jpg" alt="">
               </div>
 
@@ -129,7 +128,7 @@
 
               <div class="swiper-slide">
                 <img src="assets/img/portfolio/books-1.jpg" alt="">
-              </div>
+              </div> --}}
 
             </div>
             <div class="swiper-pagination"></div>
@@ -138,31 +137,33 @@
           <div class="swiper-button-next"></div>
 
         </div>
-
+ 
         <div class="row justify-content-between gy-4 mt-4">
-
+          @foreach ($courses as $course)
           <div class="col-lg-8">
+
+           
             <div class="portfolio-description">
-              <h2>formation Details</h2>
+              <h2>formation {{$course->title}} Details</h2>
               <p>
-                {{-- {{$course->description}} --}}
+              
               </p>
               <p>
-                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
+                {{$course->description}}
               </p>
 
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  This course is framed by professors and experts from all over the world, and it is based on 100% reliable sources
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <div>
-                  <img src="" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
+                  <img src="{{asset('images/1713484313.jpg')}}" class="testimonial-img" alt="">
+                  <h3>Fatima ezzahrae jdidi</h3>
+                  <h4>full-stack developper</h4>
                 </div>
-              </div>assets/img/testimonials/testimonials-2.jpg
+              </div>
 
               <p>
                 Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
@@ -171,23 +172,27 @@
                 Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
               </p>
 
-            </div>
-          </div>
+            </div> 
+           
+          
+            @endforeach</div>
+         
 
           <div class="col-lg-3">
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong> <span>Web design</span></li>
-                <li><strong>Client</strong> <span>ASU Company</span></li>
-                <li><strong>Project date</strong> <span>01 March, 2020</span></li>
-                <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>
-                <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
+                <li><strong>la dureé de formation</strong> <span>{{$course->dureé}}</span></li>
+                <li><strong>le prix de la formation</strong> <span>{{$course->prix}}DH</span></li>
+                <li><strong>la date de publication</strong> <span>01 March, 2024</span></li>
+                <li><strong>a video for more details about this course</strong> <a href="#">www.example.com</a></li>
+                <li><a href="{{route('learn_more')}}" class="btn-visit align-self-start">learn course</a></li>
               </ul>
             </div>
           </div>
 
         </div>
+       
 
       </div>
     </section><!-- End Portfolio Details Section -->
@@ -215,15 +220,17 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="/#hero">Home</a></li>
+          <li><a href="/#about">About </a></li>
+          <li><a href="/#services">Services </a></li>
+          <li><a href="/Formation">Our formation</a></li>
+          <li><a href="/#team">Team</a></li>
+          <li><a href="/#recent-posts">News</a></li>
+          <li><a href="/#contact">Contact</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
+        {{-- <div class="col-lg-2 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
             <li><a href="#">Web Design</a></li>
@@ -232,16 +239,16 @@
             <li><a href="#">Marketing</a></li>
             <li><a href="#">Graphic Design</a></li>
           </ul>
-        </div>
+        </div> --}}
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
+            ISTA NTIC SAFI <br>
+          City, SAFI<br>
+          Country MOROCCO <br><br>
+          <strong>Phone:</strong> +1 234 5678 910<br>
+          <strong>Email:</strong> eduSkillmentor@contact.com<br>
           </p>
 
         </div>
@@ -251,15 +258,9 @@
 
     <div class="container mt-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Impact</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>eduSkillmentor</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+    
     </div>
 
   </footer><!-- End Footer -->
@@ -269,17 +270,16 @@
 
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+  
+  <script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 

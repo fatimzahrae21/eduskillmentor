@@ -28,6 +28,7 @@
 	<tbody>
 		<tr>
 			<td>{{$team->id}}</td>
+
             <td>{{$team->nomComplete}}</td>
             <td>{{$team->specialites}}</td>
             <td><img src="{{asset('images/'.$team->image)}}" class="img-fluid" width="30px"  ></td>
@@ -35,6 +36,8 @@
             <td>{{$team->linktwitter}}</td>
          
             <td>{{$team->linklinkedin}}</td>
+
+
 			<td>{{$team->linkinstagram}}</td>
 			<td>
 				<button type="button" id="Editbtn" data-id="{{$team->id}}" class="btn btn-warning" ><i class="bi bi-pencil"></i>

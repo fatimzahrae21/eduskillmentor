@@ -103,14 +103,14 @@
         <div class="row gy-4 portfolio-container">
           @foreach ($courses as $course)
           <div class="col-xl-4 col-md-6 portfolio-item filter-html">
-            <div class="portfolio-wrap">
-                <a style="" href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}" class="img-fluid"   ></a>
+            <div class="portfolio-wrap" style="width: 20rem;">
+                <a style="" href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{asset('storage/'.$course->image)}}"  width="350px" class="img-fluid"   ></a>
               <div class="portfolio-info">
                
                 <h4><a href="{{ route('Formation-details') }}">{{$course->title}} </a></h4>
-                <h6>{{$course->dureé}}</h6>
-                <p>{{$course->description}}</p>
-                <p>{{$course->prix}}</p>
+                <h6>Number of hours: {{$course->dureé}}</h6>
+                {{-- <p>{{$course->description}}</p> --}}
+                <p>Price of course: {{$course->prix}}DH</p>
                 
               </div>
             </div>
@@ -145,10 +145,13 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About </a></li>
-            <li><a href="#">Nos Formation</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/#hero">Home</a></li>
+          <li><a href="/#about">About </a></li>
+          <li><a href="/#services">Services </a></li>
+          <li><a href="/Formation">Our formation</a></li>
+          <li><a href="/#team">Team</a></li>
+          <li><a href="/#recent-posts">News</a></li>
+          <li><a href="/#contact">Contact</a></li>
           </ul>
         </div>
   
@@ -157,11 +160,11 @@
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>
-            123 Example Street <br>
-            City, State 12345 <br>
-            Country <br><br>
+            ISTA NTIC SAFI <br>
+          City, SAFI<br>
+          Country MOROCCO <br><br>
             <strong>Phone:</strong> +1 234 5678 910<br>
-            <strong>Email:</strong> info@example.com<br>
+            <strong>Email:</strong> eduSkillmentor@contact.com<br>
           </p>
   
         </div>

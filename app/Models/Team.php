@@ -14,8 +14,8 @@ class Team extends Model
         'specialites',
         'linkfacebook',
         'linktwitter',
-        'linklinkdin',
-        'linkinstgram',
+        'linklinkedin',
+        'linkinstagram',
         'image'
    ];
 }

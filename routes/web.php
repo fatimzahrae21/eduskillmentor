@@ -28,7 +28,9 @@ Route::get('/Formation', [formationController::class, 'index']);
 
 Route::get('/', [indexController::class, 'index']);
 
-Route::get('/formationdetail',[detailFormationController::class, 'index'])->name('Formation-details');
+
+
+Route::get('/formationdetail/{id}',[detailFormationController::class, 'show'])->name('Formation-details.show');
 // routes de page admin
 /*Route::get('/admin', [CourseController::class, 'index'])
 ->name('courses.index');
@@ -66,6 +68,7 @@ Route::get('/team', [teamsController::class, 'index'])->name('teams.team');
 Route::get('/team/create', [teamsController::class, 'create'])
 ->name('teams.create');
 
+
 Route::post('/team', [FormateurController::class, 'store'])->name('formateurs.store');
 Route::delete('/team/{id}', [FormateurController::class, 'destroy'])->name('formateurs.destroy');
 Route::put('/team/{id}', [FormateurController::class, 'update'])->name('formateurs.update');
@@ -86,3 +89,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/formationdetail/learn_more', [detailFormationController::class, 'learn_more'])
+->name('learn_more');
+Route::get('/formationdetail/learn_more/singin', [detailFormationController::class, 'singin'])
+->name('singin');
+Route::get('/formationdetail/learn_more/singup', [detailFormationController::class, 'singup'])
+->name('singup');

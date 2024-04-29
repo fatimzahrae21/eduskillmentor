@@ -37,7 +37,7 @@
   <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@eduSkillmentor.com">contact@eduSkillmentor.com</a></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@eduSkillmentor.com">eduSkillmentor@contact.com</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>+212 785962314</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
@@ -83,7 +83,7 @@
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
           <h2>Welcome to <span>eduSkillmentor</span></h2>
-          <p>eduSkillmentor for education programing laungage </p>
+          <p>eduSkillmentor for education programming laungage online </p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started">Get Started</a>
             
@@ -298,8 +298,50 @@
             </div>
           </div><!-- End Team Member -->
     
+
           @endforeach
          
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="{{asset('imgfile/team1.jpg')}}" class="img-fluid" alt="Karima Bouy">
+              <h4>Karima Bouy</h4>
+              <span>Full Stack Developer</span>
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+    
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="{{asset('imgfile/team3.jpeg')}}" class="img-fluid" alt="Fatima Zahra">
+              <h4>Fatima Zahra jdidi</h4>
+              <span>full-stack Developer</span>
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="{{asset('imgfile/team1.jpg')}}" class="img-fluid" alt="Fatima Zahra">
+              <h4>oumni housna</h4>
+              <span>formateur at OFPPT</span>
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
     
         </div>
     
@@ -329,16 +371,66 @@
             <h3 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
                 <span class="num">1.</span>
-                How can I improve my problem-solving skills?
+                Is this course free or paid?
               </button>
             </h3>
             <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
               <div class="accordion-body">
-                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                It depends on the specific course. Some courses are completely free, while others require payment for registration or access to the full content. </div>
+            </div>
+          </div><!-- # Faq item-->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                <span class="num">2.</span>
+                What types of courses and formations are available?
+              </button>
+            </h3>
+            <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+              <div class="accordion-body">
+                There is a wide range of courses and formations available, including online courses, in-person workshops, vocational training programs, university degrees, and professional certifications.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                <span class="num">3.</span>
+                What programming languages can I learn through these courses?
+              </button>
+            </h3>
+            <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+              <div class="accordion-body">
+                You can find courses for almost any programming language, including popular ones like Python, JavaScript, Java, C++, and Ruby, as well as specialized languages like R, Swift, and Go.
               </div>
             </div>
           </div><!-- # Faq item-->
 
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
+                <span class="num">4.</span>
+                How do I choose the right programming course for me?
+              </button>
+            </h3>
+            <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+              <div class="accordion-body">
+                Consider your learning style, goals, and level of experience. Look for courses that match your skill level, offer the topics you're interested in, and have good reviews or ratings from past students.</div>
+            </div>
+          </div><!-- # Faq item-->
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
+                <span class="num">5.</span>
+                Are online programming courses effective?
+              </button>
+            </h3>
+            <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+              <div class="accordion-body">
+                Yes, many people find online courses to be effective for learning programming. They offer flexibility, accessibility, and often include interactive exercises and projects to reinforce learning.
+              </div>
+            </div>
+          </div>
           <!-- Other FAQ items remain unchanged -->
 
         </div>
@@ -369,7 +461,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="blog-details.html">Laravel: Building Web Applications</a>
+                <a href="#">Laravel: Building Web Applications</a>
               </h2>
         
               <div class="d-flex align-items-center">
@@ -395,7 +487,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="blog-details.html">Mastering Laravel: Advanced Techniques</a>
+                <a href="#">Mastering Laravel: Advanced Techniques</a>
               </h2>
         
               <div class="d-flex align-items-center">
@@ -421,7 +513,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="blog-details.html">Laravel Eloquent: Understanding ORM</a>
+                <a href="#">Laravel Eloquent: Understanding ORM</a>
               </h2>
         
               <div class="d-flex align-items-center">
@@ -461,7 +553,7 @@
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>27 ISTA NTIC SAFI ,  MOROCCO</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -469,7 +561,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h4>Email:</h4>
-                  <p>info@example.com</p>
+                  <p>eduSkillmentor@contact.com/p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -493,9 +585,13 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form   id="form" method="POST" action="https://api.web3forms.com/submit" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
+                  <input type="hidden" name="subject" value="New Submission ">
+                   
+                  <input type="checkbox" name="botcheck" id="" style="display: none;">
+                  <input type="hidden" name="access_key" value="a5dcd30f-c1ba-42fd-ac3b-3c51c94dfab4">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
@@ -514,6 +610,7 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
+              <div id="result"></div>
             </form>
           </div><!-- End Contact Form -->
 
@@ -545,10 +642,13 @@
       <div class="col-lg-2 col-6 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About </a></li>
-          <li><a href="#">Our formation</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="/#hero">Home</a></li>
+          <li><a href="/#about">About </a></li>
+          <li><a href="/#services">Services </a></li>
+          <li><a href="/Formation">Our formation</a></li>
+          <li><a href="/#team">Team</a></li>
+          <li><a href="/#recent-posts">News</a></li>
+          <li><a href="/#contact">Contact</a></li>
         </ul>
       </div>
 
@@ -557,11 +657,11 @@
       <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
         <h4>Contact Us</h4>
         <p>
-          123 Example Street <br>
-          City, State 12345 <br>
-          Country <br><br>
+         ISTA NTIC SAFI <br>
+          City, SAFI<br>
+          Country MOROCCO <br><br>
           <strong>Phone:</strong> +1 234 5678 910<br>
-          <strong>Email:</strong> con@example.com<br>
+          <strong>Email:</strong> eduSkillmentor@contact.com<br>
         </p>
 
       </div>
@@ -582,25 +682,18 @@
 
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files 
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>-->
-  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/aos/aos.js') }}"></script>
 <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
 <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
 <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
 
 
-  <!-- Template Main JS File -->
+
+ 
   <script src="{{ asset('js/main.js') }}"></script>
+  <script></script>
 
 </body>
 
