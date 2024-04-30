@@ -52,7 +52,7 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="#" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1> <i class="bi bi-book"> </i> eduSkillmentor<span>.</span></h1>
@@ -67,6 +67,43 @@
           <li><a href="/#recent-posts">News</a></li>
           
           <li><a href="/#contact">Contact</a></li>
+
+
+          <hr style="height: 20px; border: none; border-left: 2px solid white;margin-left: 15px;">
+
+         <li><a href="{{ route('login') }}">Sing In</a></li>
+         <div class=" btn-singup">
+          <li><a class="d-flex justify-content-center justify-content-lg-start" href="{{ route('register') }}">Sing Up</a></li>
+      </div> <div class="d-none d-md-block">
+            <div class="ms-4 d-flex align-items-center ms-md-6">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ route('login') }}" class="btn btn-primary me-2">Log in</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn btn-primary">Register</a>
+                        @endif
+                        <!-- Profile dropdown -->
+                         <div class="dropdown ms-3">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="user-menu-button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">Open user menu</span>
+                                <img src="{{asset('imgfile/team1.jpg')}}" class="rounded-circle" alt="" width="30" height="30">
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-menu-button">
+                                <li><a class="dropdown-item" href="{{ url('/profile') }}">Your Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="{{route('login.logout')}}">Sign out</a></li>
+                      
+                            </ul>
+                        </div>
+                    @else
+                       
+                    @endauth
+                @endif
+            </div>
+        </div>
+         
+
+       
         </ul>
       </nav><!-- .navbar -->
 
@@ -280,21 +317,27 @@
         </div>
     
         <div class="row gy-4">
+          @foreach ($teams as $team)
     
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+
+
             <div class="member">
-              <img src="{{asset('imgfile/team3.jpeg')}}" class="img-fluid" alt="Souad El Maazouzi">
-              <h4>Souad El Maazouzi</h4>
-              <span>Database Administrator</span>
+              <img img src="{{asset('images/'.$team->image)}}" class="img-fluid" alt="Souad El Maazouzi">
+              <h4>{{$team->nomComplete}}</h4>
+              <span>{{$team->specialites}}r</span>
               <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="{{$team->linktwitter}}"><i class="bi bi-twitter"></i></a>
+                <a href="{{$team->linkfacebook}}"><i class="bi bi-facebook"></i></a>
+                <a href="{{$team->linkinstgram}}"><i class="bi bi-instagram"></i></a>
+                <a href="{{$team->linklinkdin}}"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div><!-- End Team Member -->
     
+
+          @endforeach
+         
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <img src="{{asset('imgfile/team1.jpg')}}" class="img-fluid" alt="Karima Bouy">
@@ -322,7 +365,7 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+          {{-- <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <img src="{{asset('imgfile/team1.jpg')}}" class="img-fluid" alt="Fatima Zahra">
               <h4>oumni housna</h4>
@@ -334,7 +377,8 @@
                 <a href="#"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
-          </div><!-- End Team Member -->
+          </div><!-- End Team Member --> --}}
+
     
         </div>
     
@@ -454,7 +498,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="{{ route('Formation-details') }}">Laravel: Building Web Applications</a>
+                <a href="#">Laravel: Building Web Applications</a>
               </h2>
         
               <div class="d-flex align-items-center">
@@ -480,7 +524,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="{{ route('Formation-details') }}">Mastering Laravel: Advanced Techniques</a>
+                <a href="#">Mastering Laravel: Advanced Techniques</a>
               </h2>
         
               <div class="d-flex align-items-center">
@@ -506,7 +550,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="{{ route('Formation-details') }}">Laravel Eloquent: Understanding ORM</a>
+                <a href="#">Laravel Eloquent: Understanding ORM</a>
               </h2>
         
               <div class="d-flex align-items-center">
@@ -578,9 +622,16 @@
           </div>
 
           <div class="col-lg-8">
+
             <form action="{{asset('forms/contact.php')}}" method="post" role="form" class="php-email-form">
+            <form   id="form" method="POST" action="https://api.web3forms.com/submit" class="php-email-form">
+
               <div class="row">
                 <div class="col-md-6 form-group">
+                  <input type="hidden" name="subject" value="New Submission ">
+                   
+                  <input type="checkbox" name="botcheck" id="" style="display: none;">
+                  <input type="hidden" name="access_key" value="a5dcd30f-c1ba-42fd-ac3b-3c51c94dfab4">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
@@ -599,6 +650,7 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
+              <div id="result"></div>
             </form>
           </div><!-- End Contact Form -->
 
@@ -676,11 +728,12 @@
 <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
 <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+
 
 
  
   <script src="{{ asset('js/main.js') }}"></script>
+  <script></script>
 
 </body>
 
