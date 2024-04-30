@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CoursRequest;
+use App\Models\Team;
 use App\Models\Course;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CoursRequest;
 
 
 class CourseController extends Controller
@@ -28,7 +29,10 @@ class CourseController extends Controller
     public function create()
     {
         //
-        return view('courses.create');
+        $courses = Course::all();
+        $teams = Team::all();
+        return view('courses.create', compact('courses', 'teams'));
+
     }
 
     /**

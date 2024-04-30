@@ -27,7 +27,7 @@
                           </a>
                     </div>
               
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login.action') }}">
                         @csrf
 
                         <div class="form-group">

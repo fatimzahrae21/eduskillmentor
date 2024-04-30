@@ -374,18 +374,18 @@ var linkInstagram = cells[7].textContent.trim();
 
 
       // Populate the modal form with the extracted data
-      document.getElementById('formateurId').value = id;
-      document.getElementById('nomCompletef').value = nomComplete; // Display specialités in the Nom Complet input
-      document.getElementById('specialitesInput').value = specialites;
-      document.getElementById('facebook').value = linkFacebook;
-      document.getElementById('twitter').value = linkTwitter;
-      document.getElementById('instagram').value = linkInstagram;
-      document.getElementById('linkedin').value = linkLinkedin;
+      // document.getElementById('formateurId').value = id;
+      // document.getElementById('nomComplete').value = nomComplete; // Display specialités in the Nom Complet input
+      // document.getElementById('specialitesInput').value = specialites;
+      // document.getElementById('facebook').value = linkFacebook;
+      // document.getElementById('twitter').value = linkTwitter;
+      // document.getElementById('instagram').value = linkInstagram;
+      // document.getElementById('linkedin').value = linkLinkedin;
 
       // Update the form action URL
       /*var form = document.getElementById('editForm');
       form.action = "{{ route('formateurs.update', '" + id + "') }}";*/
-      document.getElementById('edit-id').value = teamId;
+      // document.getElementById('edit-id').value = teamId;
 
       // Show the edit modal
       document.getElementById('myModaledit').style.display = 'block';

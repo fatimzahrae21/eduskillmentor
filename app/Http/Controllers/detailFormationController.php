@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\DetailFormation;
+
 use Illuminate\Http\Request;
 
 class detailFormationController extends Controller
@@ -20,15 +22,15 @@ class detailFormationController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function learn_more() {
-        return view('learn_more');
-    }
-    public function singin() {
-        return view('singin');
-    }
-    public function singup() {
-        return view('singup');
-    }
+    // public function learn_more() {
+    //     return view('learn_more');
+    // }
+    // public function singin() {
+    //     return view('singin');
+    // }
+    // public function singup() {
+    //     return view('singup');
+    // }
     
     public function create()
     {
@@ -48,7 +50,12 @@ class detailFormationController extends Controller
      */
     public function show(string $id)
     {
-        //
+       
+        $detailFormation = DetailFormation::where('course_id', $id)->with('course', 'team')->first();
+      
+      
+        // Return the detail formation view with the data
+        return view('Formation-details',compact('detailFormation'));
     }
 
     /**

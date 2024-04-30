@@ -180,7 +180,7 @@
                 <li><strong>le prix de la formation</strong> <span>{{ $detailFormation->course->prix }}DH</span></li>
                 <li><strong>la date de publication</strong> <span>{{ $detailFormation->date_publication }}</span></li>
                 <li><strong>a video for more details about this course</strong> <a href="#{{ $detailFormation->video_link}}">View</a></li>
-                <li><a href="{{route('learn_more')}}" class="btn-visit align-self-start">learn course</a></li>
+                <li><a href="/formationdetail/learn_more" class="btn-visit align-self-start">learn course</a></li>
               </ul>
             </div>
           </div>

@@ -28,7 +28,7 @@
                             <h1> <i class="bi bi-book"> </i> eduSkillmentor<span>.</span></h1>
                           </a>
                     </div>
-                    <form method="POST" action="{{ route('register.save') }}">
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="row mb-3">

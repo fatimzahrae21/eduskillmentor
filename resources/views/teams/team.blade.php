@@ -1,5 +1,5 @@
 
-<x-master title="infos page">
+<x-master title="">
            
 
 	             
@@ -40,11 +40,16 @@
 
 			<td>{{$team->linkinstagram}}</td>
 			<td>
-				<button type="button" id="Editbtn" data-id="{{$team->id}}" class="btn btn-warning" ><i class="bi bi-pencil"></i>
-				</button>
+				{{-- <button type="button"  class="btn btn-warning" ><i class="bi bi-pencil"></i>
+				</button> --}}
+				<form action="{{route('teams.edit',$team->id)}}" method="GET">
+					@csrf
+				 @method('GET')
+					<button class="btn btn-primary btn-sm float-end mx-2" id="Editbtn" >Modifier</button>
+				  </form>
 				
 					<button style="display: none">
-				<form  action="{{ route('formateurs.destroy', $team->id ) }}" method="POST">
+				<form  action="{{ route('teams.destroy', $team->id ) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
@@ -59,14 +64,14 @@
 	@endforeach
 </table>
 
-      @include('teams.edit')
-<div id="myModal" class="modal">
+      {{-- @include('teams.edit') --}}
+ <div id="myModal" class="modal"></div>
 
 	<!-- Modal content -->
 	<div class="modal-content">
 	  <span class="close">&times;</span>
 	  
-	  <form action="{{ route('formateurs.store') }}" method="POST" enctype="multipart/form-data">
+	  <form action="{{ route('teams.create') }}" method="POST" enctype="multipart/form-data">
 		@csrf
 		<div class="form-group">
 			<label for="nom">Nom Complete</label>
@@ -97,16 +102,16 @@
 		<div class="form-group">
 			<label for="linkedin"><i class="bi bi-linkedin"></i> Lien LinkedIn</label>
 			<input type="text" class="form-control" name="linklinkedin">
-		</div>
+		</form></div>
 		<button type="submit" class="btn btn-primary">Ajouter</button>
-	</form>
+	
 	
 	</div>
   
   </div>
  
 
-
+ 
 
 
 

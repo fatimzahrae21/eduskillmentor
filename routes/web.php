@@ -1,14 +1,18 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\detailFormationController;
-use App\Http\Controllers\indexController;
-use App\Http\Controllers\formationController;
-use App\Http\Controllers\teamsController;
-use App\Http\Controllers\FormateurController;
-
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\indexController;
+use App\Http\Controllers\learnController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\teamsController;
+
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\FormateurController;
+use App\Http\Controllers\formationController;
+use App\Http\Controllers\detailFormationController;
+use App\Http\Controllers\detailFormationIIController;
 
 
 /*
@@ -26,7 +30,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/Formation', [formationController::class, 'index']);
 
-Route::get('/', [indexController::class, 'index']);
+Route::get('/', [indexController::class, 'index'])->name('index');
+
 
 
 
@@ -69,13 +74,13 @@ Route::get('/team/create', [teamsController::class, 'create'])
 ->name('teams.create');
 
 
-Route::post('/team', [FormateurController::class, 'store'])->name('formateurs.store');
-Route::delete('/team/{id}', [FormateurController::class, 'destroy'])->name('formateurs.destroy');
-Route::put('/team/{id}', [FormateurController::class, 'update'])->name('formateurs.update');
-Route::get('/team/{team}/edit', [teamsController::class, 'edit'])
+Route::post('/team', [FormateurController::class, 'store'])->name('teams.store');
+Route::delete('/team/{id}', [FormateurController::class, 'destroy'])->name('teams.destroy');
+Route::put('/team/{id}', [FormateurController::class, 'update'])->name('teams.update');
+Route::get('/team/{team}/edit', [FormateurController::class, 'edit'])
 ->name('teams.edit');
-Route::put('/team/{team}', [teamsController::class, 'update'])
-->name('teams.update');
+// Route::put('/team/{team}', [teamsController::class, 'update'])
+// ->name('teams.update');
 
 });
 Auth::routes();
@@ -89,9 +94,26 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/formationdetail/learn_more', [detailFormationController::class, 'learn_more'])
+Route::get('/formationdetail/learn_more', [learnController::class, 'learn_more'])
 ->name('learn_more');
-Route::get('/formationdetail/learn_more/singin', [detailFormationController::class, 'singin'])
+Route::get('/formationdetail/learn_more/singin', [learnController::class, 'singin'])
 ->name('singin');
-Route::get('/formationdetail/learn_more/singup', [detailFormationController::class, 'singup'])
+Route::get('/formationdetail/learn_more/singup', [learnController::class, 'singup'])
 ->name('singup');
+
+
+Route::post('/addFormation', [detailFormationIIController::class, 'store'])
+->name('formation.store');
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('registermenu', 'register')->name('register');
+    Route::post('registermenu', 'registerSave')->name('register.save');
+ 
+    Route::get('loginmenu', 'login')->name('login');
+    Route::post('loginmenu', 'loginAction')->name('login.action');
+ 
+    // Route::get('logout', 'logout')->middleware('auth')->name('logout');
+}); 
+
+Route::get('/logout',[LoginController::class,'logout'])
+->name('login.logout');
