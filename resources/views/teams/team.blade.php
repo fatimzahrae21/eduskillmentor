@@ -5,7 +5,9 @@
 	             
 
 	
-	  <button id="openModalBtn"  class="btn btn-primary">Ajouter team</button>
+	  {{-- <button   class="btn btn-primary">Ajouter team</button> --}}
+	  <a href="{{ route('teams.create') }}" class="btn btn-primary">Ajouter team</a>
+
          
 				 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 	
@@ -65,7 +67,7 @@
 </table>
 
       {{-- @include('teams.edit') --}}
- <div id="myModal" class="modal"></div>
+ {{-- <div id="myModal" class="modal"></div>
 
 	<!-- Modal content -->
 	<div class="modal-content">
@@ -111,7 +113,7 @@
   </div>
  
 
- 
+  --}}
 
 
 

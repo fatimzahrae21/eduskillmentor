@@ -37,8 +37,8 @@
   <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@eduSkillmentor.com">eduSkillmentor@contact.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+212 785962314</span></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:eduSkillmentor@contact.com">eduSkillmentor@contact.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+212 585962314</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -70,25 +70,27 @@
 
 
           <hr style="height: 20px; border: none; border-left: 2px solid white;margin-left: 15px;">
-
-         <li><a href="{{ route('login') }}">Sing In</a></li>
-         <div class=" btn-singup">
+          <li><a href="{{ route('login_user.show') }}">Sing In</a></li>
+         {{-- <div class=" btn-singup">
           <li><a class="d-flex justify-content-center justify-content-lg-start" href="{{ route('register') }}">Sing Up</a></li>
-      </div> <div class="d-none d-md-block">
+      </div>   --}}
+      <div class="d-none d-md-block">
             <div class="ms-4 d-flex align-items-center ms-md-6">
-                @if (Route::has('login'))
+                {{-- @if (Route::has('loginmenu'))
                     @auth
-                        <a href="{{ route('login') }}" class="btn btn-primary me-2">Log in</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-primary">Register</a>
-                        @endif
+            <li><a href="{{ route('loginmenu') }}">Sing In</a></li>
+                        @if (Route::has('registermenu'))
+                        <div class=" btn-singup">
+                          <li><a class="d-flex justify-content-center justify-content-lg-start" href="{{ route('registermenu') }}">Sing Up</a></li>
+                      </div> 
+                        @endif 
                         <!-- Profile dropdown -->
                          <div class="dropdown ms-3">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="user-menu-button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="visually-hidden">Open user menu</span>
                                 <img src="{{asset('imgfile/team1.jpg')}}" class="rounded-circle" alt="" width="30" height="30">
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-menu-button">
+                            </button> 
+                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-menu-button">
                                 <li><a class="dropdown-item" href="{{ url('/profile') }}">Your Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
                                 <li><a class="dropdown-item" href="{{route('login.logout')}}">Sign out</a></li>
@@ -98,7 +100,7 @@
                     @else
                        
                     @endauth
-                @endif
+                @endif --}}
             </div>
         </div>
          

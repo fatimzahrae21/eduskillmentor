@@ -32,9 +32,48 @@ class teamsController extends Controller
      */
     public function store(TeamRequest $request)
     {
+        // $formFields=$request->validated();
+        // $formFields['image']=$request->file('image')->store('cours','public');
         
-        dd($request->all());
-}
+        //  Team::create($formFields);
+ 
+        //  return redirect()->route('teams.team')
+        //      ->with('success', 'Course created successfully.');
+    
+        
+       //
+         // Validate the incoming request data
+         $validatedData = $request->validate([
+            'nomComplete' => 'required|string|max:255',
+            'specialites' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'linkfacebook' => 'nullable|string|max:255',
+            'linktwitter' => 'nullable|string|max:255',
+            'linkinstagram' => 'nullable|string|max:255',
+            'linklinkedin' => 'nullable|string|max:255',
+        ]);
+
+    //     // Handle image upload
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $imageName);
+
+        // Create a new Formateur instance
+        $formateur = new Team();
+        $formateur->nomComplete = $validatedData['nomComplete'];
+        $formateur->specialites = $validatedData['specialites'];
+        $formateur->image = $imageName;
+        $formateur->linkfacebook = $validatedData['linkfacebook'];
+        $formateur->linktwitter = $validatedData['linktwitter'];
+        $formateur->linkinstagram = $validatedData['linkinstagram'];
+        $formateur->linklinkedin = $validatedData['linklinkedin'];
+
+        // Save the Formateur to the database
+        $formateur->save();
+
+        // Redirect back to the index page with a success message
+        return redirect()->route('teams.team')->with('success', 'team added successfully');
+    
+ }
     
 
     /**

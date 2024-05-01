@@ -22,13 +22,14 @@ class TeamRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nom' => 'required',
-            'specialites' => 'required',
-            'link facebook' => 'required',
-            'link twitter' => 'required',
-            
-            'link linkdin' => 'required',
-            'link instgram' => 'required',
+            'nomComplete' => 'required|string|max:255',
+            'specialites' => 'required|string|max:255',
+             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+             'linkfacebook' => 'nullable|string|max:255',
+             'linktwitter' => 'nullable|string|max:255',
+             'linkinstagram' => 'nullable|string|max:255',
+         'linklinkedin' => 'nullable|string|max:255',
+         
             //
         ];
     }

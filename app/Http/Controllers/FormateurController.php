@@ -62,7 +62,7 @@ class FormateurController extends Controller
         $formateur->save();
 
         // Redirect back to the index page with a success message
-        return redirect()->route('teams.team')->with('success', 'team updated successfully');
+        return redirect()->route('teams.team')->with('success', 'team added successfully');
     }
 
     /**

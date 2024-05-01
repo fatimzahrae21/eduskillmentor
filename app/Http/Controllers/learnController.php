@@ -7,12 +7,8 @@ use Illuminate\Http\Request;
 class learnController extends Controller
 {
     //
-    public function learn_more() {
-        return view('learn_more');
+    public function contenu() {
+        return view('contenu');
     }
-    public function singin() {
-        return view('singin');
-    }
-    public function singup() {
-        return view('singup');
-}}
+    
+}
