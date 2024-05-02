@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-// app/Http/Controllers/Auth/LoginController.php or AuthenticatedSessionController.php
-
-use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -28,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/login';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -38,13 +35,5 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
-
-        $request->session()->invalidate();
-
-        return redirect('/login');
     }
 }

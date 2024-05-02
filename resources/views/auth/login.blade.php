@@ -70,9 +70,13 @@
                                 </a>
                             @endif
                         </div>
-                        <p>
-                            Don't have an account yet ? <a href="{{route('register')}}">Sing Up</a>
-                        </p>
+                        <div class="mb-3 form-check">
+                            
+                            <label class="form-check-label" for="remember">
+                                {{ __(" Don't  have an account yet ?") }}<a href="{{route('register')}}">Sing Up</a> 
+                            </label>
+                        </div>
+                        
                     </form>
                 </div>
             
@@ -83,4 +87,3 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
    <!-- Other scripts if needed -->
-

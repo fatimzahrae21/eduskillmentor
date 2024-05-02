@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\Contenu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\coursepartie;
 
 class ContenuController extends Controller
 {
@@ -38,40 +39,32 @@ class ContenuController extends Controller
      */
     public function store(Request $request)
     {
+       // ajouter man la table _course__partie 
+       // model dyal had la table coursepartie
+
+        // Validate the incoming data
         $validatedData = $request->validate([
-            'course_id' => 'required',
-            'team_id' => 'required',
-            'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
-            'title' => 'nullable|string|max:255',
-            'content' => 'required|string',
-            'introduction' => 'required|string',
-         
+            'course_id' => 'required|exists:courses,id',
+            'title' => 'required',
+            'content' => 'required',
+            'videourl' => 'required|mimes:mp4,avi,mov,wmv,ogv,ogg,webm,ogx',
         ]);
-
-        // Handle image upload
-        $imageName = time().'.'.$request->image->extension();  
-        $request->image->move(public_path('images'), $imageName);
-
-        // Create a new Formateur instance
-        $contenus = new Team();
-        $contenus->course_id = $validatedData['course_id'];
-        $contenus->team_id = $validatedData['team_id'];
-        $contenus->image = $imageName;
-        $contenus->title = $validatedData['title'];
-        $contenus->content = $validatedData['content'];
-        $contenus->introduction = $validatedData['introduction'];
+        $file = $request->file('videourl');
+         $file->move('upload',$file->getClientOriginalName());
+         $file_name=$file->getClientOriginalName();
+        // Handle the file upload
        
-        // Save the Formateur to the database
-        $contenus->save();
-        //
-        // Contenu::create([
-        //     'course_id' => $request->course_id,
-        //     'team_id' => $request->team_id,
-        //     'title' => $request->title,
-        //     'content' => $request->content,
-        //     'introduction'=> $request->introduction,
-        // 'image'=> $request->image
-        // ]);
+
+        // Create a new CoursePartie instance
+        $coursePartie = new coursepartie();
+        $coursePartie->course_id = $validatedData['course_id'];
+        $coursePartie->title = $validatedData['title'];
+        $coursePartie->content = $validatedData['content'];
+        $coursePartie->video_url = $file_name ; // 
+
+    $coursePartie->save();
+
+        // Assuming you have an index route for showing all contenu
 
         return redirect()->route('contenu.create')->with('success', 'content formation added successfully.');
     }
@@ -83,7 +76,7 @@ class ContenuController extends Controller
     public function show( $id)
     {
         //
-        $content = Contenu::where('course_id', $id)->with('course', 'team')->first();
+        $content = coursepartie::where('course_id', $id)->with('course')->get();
       
       
         // Return the detail formation view with the data

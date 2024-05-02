@@ -38,6 +38,8 @@ Route::get('/', [indexController::class, 'index'])->name('index');
 
 
 Route::get('/formationdetail/{id}',[DController::class, 'show'])->name('Formation-details.show');
+Route::get('/learn_more/{id}', [ContenuController::class, 'show'])
+->name('learn.show');
 // routes de page admin
 /*Route::get('/admin', [CourseController::class, 'index'])
 ->name('courses.index');
@@ -98,8 +100,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/learn_more', [learnController::class, 'contenu'])
-->name('learn_more');
+
 Route::get('/formationdetail/learn_more/singin', [learnController::class, 'singin'])
 ->name('singin');
 Route::get('/formationdetail/learn_more/singup', [learnController::class, 'singup'])
@@ -137,3 +138,7 @@ Route::post('/login_user',[LoginController::class,'login_user'])
 
 Route::get('/login_user',[LoginController::class,'show'])
 ->name('login_user.show');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
