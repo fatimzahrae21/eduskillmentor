@@ -1,21 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ContenuController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\learnController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\teamsController;
 
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\DController;
+use App\Http\Controllers\ContenuController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\formationController;
 use App\Http\Controllers\detailFormationController;
 use App\Http\Controllers\detailFormationIIController;
-
+use App\Http\Controllers\formulaireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,14 +31,15 @@ use App\Http\Controllers\detailFormationIIController;
 
 /*add*/
 
-Route::get('/Formation', [formationController::class, 'index']);
+Route::get('/Formation', [formationController::class, 'index'])->name('ourFormation');
 
 Route::get('/', [indexController::class, 'index'])->name('index');
 
 
+// Route::get('/form',[formulaireController::class,'create'])->name('formulaire');
 
-
-Route::get('/formationdetail/{id}',[DController::class, 'show'])->name('Formation-details.show');
+Route::get('/formationdetail/{id}',[DController::class, 'show'])
+->name('Formation-details.show');
 Route::get('/learn_more/{id}', [ContenuController::class, 'show'])
 ->name('learn.show');
 // routes de page admin
@@ -101,11 +103,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/formationdetail/learn_more/singin', [learnController::class, 'singin'])
-->name('singin');
-Route::get('/formationdetail/learn_more/singup', [learnController::class, 'singup'])
-->name('singup');
-
 
 Route::post('/addFormation', [detailFormationIIController::class, 'store'])
 ->name('formation.store');
@@ -133,12 +130,18 @@ Route::post('/content/store', [ContenuController::class, 'store'])
 // ->name('courses.show');
 
 
-Route::post('/login_user',[LoginController::class,'login_user'])
-->name('login_user.login');
+// Route::post('/login_user',[LoginController::class,'login_user'])
+// ->name('login_user.login');
 
-Route::get('/login_user',[LoginController::class,'show'])
-->name('login_user.show');
+// Route::get('/login_user',[LoginController::class,'show'])
+// ->name('login_user.show');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/signin', [StudentController::class, 'showSignInForm'])->name('signin');
+Route::post('/signin', [StudentController::class, 'signIn'])->name('signIn');
+
+Route::get('/signup', [StudentController::class, 'showSignUpForm'])->name('signup');
+Route::post('/signup', [StudentController::class, 'signUp'])->name('signUp');
+Route::get('/logout',  [StudentController::class,'logout'])->middleware('auth')->name('logout');

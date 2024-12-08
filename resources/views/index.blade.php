@@ -70,20 +70,13 @@
 
 
           <hr style="height: 20px; border: none; border-left: 2px solid white;margin-left: 15px;">
-          <li><a href="{{ route('login_user.show') }}">Sing In</a></li>
-         {{-- <div class=" btn-singup">
-          <li><a class="d-flex justify-content-center justify-content-lg-start" href="{{ route('register') }}">Sing Up</a></li>
-      </div>   --}}
+            
       <div class="d-none d-md-block">
             <div class="ms-4 d-flex align-items-center ms-md-6">
-                {{-- @if (Route::has('loginmenu'))
+                 @if (Route::has('signIn'))
                     @auth
-            <li><a href="{{ route('loginmenu') }}">Sing In</a></li>
-                        @if (Route::has('registermenu'))
-                        <div class=" btn-singup">
-                          <li><a class="d-flex justify-content-center justify-content-lg-start" href="{{ route('registermenu') }}">Sing Up</a></li>
-                      </div> 
-                        @endif 
+           
+                      
                         <!-- Profile dropdown -->
                          <div class="dropdown ms-3">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="user-menu-button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -91,16 +84,23 @@
                                 <img src="{{asset('imgfile/team1.jpg')}}" class="rounded-circle" alt="" width="30" height="30">
                             </button> 
                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-menu-button">
-                                <li><a class="dropdown-item" href="{{ url('/profile') }}">Your Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="{{route('login.logout')}}">Sign out</a></li>
+                                
+                               
+                                <li><a class="dropdown-item" href="{{ url('/logout') }}">Sign out</a></li>
                       
                             </ul>
                         </div>
                     @else
-                       
+                       <li><a href="{{ route('signIn') }}" class="font-semibold text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sing In</a></li>
+ 
+                            @if (Route::has('signUp'))
+                            <div class=" btn-singup">
+                            <li><a href="{{ route('signUp') }}" class="d-flex justify-content-center justify-content-lg-start">Sing Up</a></li>
+                             </div>  
+                            @endif
+                            
                     @endauth
-                @endif --}}
+                @endif 
             </div>
         </div>
          
@@ -274,7 +274,7 @@
               </div>
               <h3>Course Offerings</h3>
               <p>Discover our diverse range of courses covering various subjects and skill levels.</p>
-              <a href="#" class="readmore stretched-link">Explore Courses <i class="bi bi-arrow-right"></i></a>
+              {{-- <a href="#" class="readmore stretched-link">Explore Courses <i class="bi bi-arrow-right"></i></a> --}}
             </div>
           </div><!-- End Service Item -->
     
@@ -285,8 +285,8 @@
               </div>
               <h3>Expert Instructors</h3>
               <p>Learn from industry experts and experienced professionals in your field of interest.</p>
-              <a href="#" class="readmore stretched-link">Meet Our Instructors <i class="bi bi-arrow-right"></i></a>
-            </div>
+              {{-- <a href="#" class="readmore stretched-link">Meet Our Instructors <i class="bi bi-arrow-right"></i></a>--}}
+            </div> 
           </div><!-- End Service Item -->
     
           <div class="col-lg-4 col-md-6">
@@ -296,7 +296,7 @@
               </div>
               <h3>Interactive Learning</h3>
               <p>Engage in interactive learning experiences designed to enhance understanding and retention.</p>
-              <a href="#" class="readmore stretched-link">Learn More <i class="bi bi-arrow-right"></i></a>
+              {{-- <a href="#" class="readmore stretched-link">Learn More <i class="bi bi-arrow-right"></i></a> --}}
             </div>
           </div><!-- End Service Item -->
     
@@ -325,7 +325,7 @@
 
 
             <div class="member">
-              <img img src="{{asset('images/'.$team->image)}}" class="img-fluid" alt="Souad El Maazouzi">
+              <img img src="{{asset('images/'.$team->image)}}" class="img-fluid" alt="fatima zahra">
               <h4>{{$team->nomComplete}}</h4>
               <span>{{$team->specialites}}r</span>
               <div class="social">
@@ -354,7 +354,7 @@
             </div>
           </div><!-- End Team Member -->
     
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+          {{-- <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <img src="{{asset('imgfile/team3.jpeg')}}" class="img-fluid" alt="Fatima Zahra">
               <h4>Fatima Zahra jdidi</h4>
@@ -366,7 +366,7 @@
                 <a href="#"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
-          </div>
+          </div> --}}
           {{-- <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <img src="{{asset('imgfile/team1.jpg')}}" class="img-fluid" alt="Fatima Zahra">
@@ -500,9 +500,9 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="#">Laravel: Building Web Applications</a>
+                <a href="{{route('ourFormation')}}">Laravel: Building Web Applications</a>
               </h2>
-        
+            
               <div class="d-flex align-items-center">
                 <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
@@ -526,15 +526,15 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="#">Mastering Laravel: Advanced Techniques</a>
+                <a href="{{route('ourFormation')}}">Mastering Laravel: Advanced Techniques</a>
               </h2>
         
               <div class="d-flex align-items-center">
                 <img src="assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
-                  <p class="post-author">Karima Bouy</p>
+                  <p class="post-author">Fatima zahra jdidi</p>
                   <p class="post-date">
-                    <time datetime="2024-01-01">Jan 1, 2024</time>
+                    <time datetime="2024-01-01">Feb 19, 2024</time>
                   </p>
                 </div>
               </div>
@@ -552,7 +552,7 @@
               <p class="post-category">Back End</p>
         
               <h2 class="title">
-                <a href="#">Laravel Eloquent: Understanding ORM</a>
+                <a href="{{route('ourFormation')}}">Laravel Eloquent: Understanding ORM</a>
               </h2>
         
               <div class="d-flex align-items-center">
@@ -625,7 +625,7 @@
 
           <div class="col-lg-8">
 
-            <form action="{{asset('forms/contact.php')}}" method="post" role="form" class="php-email-form">
+            {{-- <form action="{{asset('forms/contact.php')}}" method="post" role="form" class="php-email-form"> --}}
             <form   id="form" method="POST" action="https://api.web3forms.com/submit" class="php-email-form">
 
               <div class="row">
@@ -701,8 +701,8 @@
         <p>
          ISTA NTIC SAFI <br>
           City, SAFI<br>
-          Country MOROCCO <br><br>
-          <strong>Phone:</strong> +1 234 5678 910<br>
+          Country MOROCCO <br>
+          <strong>Phone:</strong> +212 585962314<br>
           <strong>Email:</strong> eduSkillmentor@contact.com<br>
         </p>
 

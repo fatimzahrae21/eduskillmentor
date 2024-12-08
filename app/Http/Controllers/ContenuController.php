@@ -49,25 +49,34 @@ class ContenuController extends Controller
             'content' => 'required',
             'videourl' => 'required|mimes:mp4,avi,mov,wmv,ogv,ogg,webm,ogx',
         ]);
-        $file = $request->file('videourl');
-         $file->move('upload',$file->getClientOriginalName());
-         $file_name=$file->getClientOriginalName();
-        // Handle the file upload
-       
-
-        // Create a new CoursePartie instance
-        $coursePartie = new coursepartie();
-        $coursePartie->course_id = $validatedData['course_id'];
-        $coursePartie->title = $validatedData['title'];
-        $coursePartie->content = $validatedData['content'];
-        $coursePartie->video_url = $file_name ; // 
-
-    $coursePartie->save();
-
-        // Assuming you have an index route for showing all contenu
-
-        return redirect()->route('contenu.create')->with('success', 'content formation added successfully.');
-    }
+    
+        // Check if a file is uploaded
+        if ($request->hasFile('videourl')) {
+            $file = $request->file('videourl');
+            
+            // Check if the file is valid
+            if ($file->isValid()) {
+                // Move the uploaded file to the desired location
+                $file_name = $file->getClientOriginalName();
+                $file->move('upload', $file_name);
+    
+                // Create a new CoursePartie instance
+                $coursePartie = new CoursePartie();
+                $coursePartie->course_id = $validatedData['course_id'];
+                $coursePartie->title = $validatedData['title'];
+                $coursePartie->content = $validatedData['content'];
+                $coursePartie->video_url = $file_name;
+                $coursePartie->save();
+    
+                return redirect()->route('contenu.create')->with('success', 'Content formation added successfully.');
+            } else {
+                // Handle invalid file
+                return back()->with('error', 'Invalid file uploaded.');
+            }
+        } else {
+            // Handle case where no file is uploaded
+            return back()->with('error', 'No file uploaded.');
+        } }
     
 
     /**

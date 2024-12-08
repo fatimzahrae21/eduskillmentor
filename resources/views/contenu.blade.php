@@ -38,7 +38,26 @@
 </head>
 
 <body>
-
+  <style>
+   
+  /* h2 {
+    color: orange;
+    font-style: italic;
+    font-weight: 600;
+  } */
+  .text {
+    font-size: 1.5em;
+text-align: center;
+color: rgb(35, 142, 133);
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .content {
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      
+      
+      font-weight: 1000;
+    }
+  </style>
   <!-- ======= Header ======= -->
   <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -93,15 +112,16 @@
             <div class="col-lg-6 text-center">
               <h2>Learn Course 
               </h2>
-              <p>For more details about our courses and the price and also learning more about it</p></div>
+              {{-- <p>For more details about our courses and the price and also learning more about it</p> --}}
+            </div>
           </div>
         </div>
       </div>
       <nav>
         <div class="container">
           <ol>
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li>formation Details</li>
+            <li><a href="{{route('index')}}">Home</a></li>
+            <li><a href="{{route('index')}}">formation Details</a></li>
             <li>Learn Course </li>
           </ol>
         </div>
@@ -120,17 +140,43 @@
               <div class="col-lg-8">
                 
     
-                 <h2 class="blog-details"> les partie de cours  </h2>
+                 <h2 class="blog-details"> Parts of the course  </h2>
                  @if($content && is_iterable($content))
                  @foreach($content as $item)
                 <article class="blog-details">
-
+<div class="text">
                   <h2 class="blog-details"> {{ $item->title}} </h2>
-              
+              </div>
                    <div class="content">
                     <p class="blog-details"> {{ $item->content}} </p>
        
                    </div><!-- End post content -->
+                   <div class="text">
+                   <h2 class="blog-details"> Vedio for more understanding </h2></div>
+                   <style>
+                    
+                    .video-container {
+                      margin-top: 12px;
+                        width: 650px; /* Set your desired width */
+                        height: 300px; /* Set your desired height */
+                    }
+                
+                    .video-container video {
+                        width: 100%; /* Make the video fill its container width */
+                        height: 100%; /* Make the video fill its container height */
+                    }
+                </style>
+                
+                <div class="video-container">
+                     <video controls>
+                    <source src="{{ asset('upload/' .$item->video_url)}}" type="video/mp4">
+                    <!-- Add additional <source> elements for different video formats if needed -->
+                    Your browser does not support the video tag.
+                </video>
+                </div>
+                
+                  
+                
                  </article><!-- End blog post -->
                  @endforeach
              @else
@@ -149,7 +195,7 @@
                   @if($content && is_iterable($content))
     
                   <div class="sidebar-item categories">
-                    <h3 class="sidebar-title">Categories</h3>
+                    <h3 class="sidebar-title">Plan..</h3>
                     <ul class="mt-3">
                       @foreach($content as $item)
                       <li><a href="#"> {{ $item->title}}</a></li>
@@ -161,13 +207,7 @@
                   @endif
                     </ul>
                   </div><!-- End sidebar categories-->
-    
-                  
-    
-                
-    
-         
-    
+
               </div>
             </div>
     
@@ -217,8 +257,8 @@
         <p>
           ISTA NTIC SAFI <br>
         City, SAFI<br>
-        Country MOROCCO <br><br>
-          <strong>Phone:</strong> +1 234 5678 910<br>
+        Country MOROCCO <br>
+          <strong>Phone:</strong> +212 585962314<br>
           <strong>Email:</strong> eduSkillmentor@contact.com<br>
         </p>
 

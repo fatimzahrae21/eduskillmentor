@@ -177,8 +177,8 @@
               <h3>Project information</h3>
               <ul>
                 <li><strong>la dureé de formation</strong> <span>{{ $detailFormation->course->dureé }}</span></li>
-                <li><strong>le prix de la formation</strong> <span>{{ $detailFormation->course->prix }}</span></li>
-                <li><strong>la date de publication</strong> <span>{{ $detailFormation->date_publication }}</span></li>
+                 <li><strong>le prix de la formation</strong> <span>{{ $detailFormation->course->prix }}</span></li>
+               <li><strong>la date de publication</strong> <span>{{ $detailFormation->date_publication }}</span></li>
                 <li><strong>a video for more details about this course</strong> <a href="#{{ $detailFormation->video_link}}">View</a></li>
                 <div>
                 <li><a href="{{route('learn.show', ['id' => $detailFormation->course->id])}}" class="btn-visit align-self-start">learn course</a></li>

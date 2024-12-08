@@ -14,7 +14,7 @@
 @endif
 
 
-<form method="POST" action="{{ route('contenu.store') }}">
+<form method="POST" action="{{ route('contenu.store') }}"  enctype="multipart/form-data">
     @csrf
 
     <div class="mb-3">

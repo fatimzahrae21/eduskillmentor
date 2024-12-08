@@ -92,12 +92,12 @@
       <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
   
         <ul class="portfolio-flters">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-html">HTML</li>
-          <li data-filter=".filter-js">JavaScript</li>
+          <li data-filter="*" class="filter-active">All Courses</li>
+         {{-- <li data-filter=".filter-html">HTML</li> --}}
+           {{-- <li data-filter=".filter-js">JavaScript</li>
           <li data-filter=".filter-php">PHP</li>
           <li data-filter=".filter-python">Python</li>
-          <li data-filter=".filter-poo">Object-Oriented Programming (OOP)</li>
+          <li data-filter=".filter-poo">Object-Oriented Programming (OOP)</li> --}}
       </ul><!-- End Portfolio Filters -->
        
         <div class="row gy-4 portfolio-container">
@@ -110,7 +110,7 @@
                 <h4><a href="{{ route('Formation-details.show', ['id' => $course->id] )}}">{{$course->title}} </a></h4>
                 <h6>Number of hours: {{$course->dureé}}</h6>
                 {{-- <p>{{$course->description}}</p> --}}
-                <p>Price of course: {{$course->prix}}DH</p>
+                <p>Price of course: {{$course->prix}}</p>
                 
               </div>
             </div>
@@ -162,8 +162,8 @@
           <p>
             ISTA NTIC SAFI <br>
           City, SAFI<br>
-          Country MOROCCO <br><br>
-            <strong>Phone:</strong> +1 234 5678 910<br>
+          Country MOROCCO <br>
+            <strong>Phone:</strong> +212 585962314<br>
             <strong>Email:</strong> eduSkillmentor@contact.com<br>
           </p>
   
